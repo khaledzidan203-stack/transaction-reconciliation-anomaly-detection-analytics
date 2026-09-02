@@ -122,9 +122,11 @@ def _derive_reconciliation_status(
 
     # Unmatched sides
     if is_unmatched_a:
-        return STATUS_MISSING_IN_SOURCE_A if identity == IDENTITY_MISSING_A else STATUS_ADDITIONAL_TRANSACTION
+        return STATUS_MISSING_IN_SOURCE_A
     if is_unmatched_b:
-        return STATUS_MISSING_IN_SOURCE_B if identity == IDENTITY_MISSING_B else STATUS_ADDITIONAL_ITEM
+        if identity == IDENTITY_UNMATCHED:
+            return STATUS_UNRESOLVED
+        return STATUS_MISSING_IN_SOURCE_B
 
     # Fuzzy review band
     if match_method == MATCH_FUZZY_NAME and confidence < REVIEW_CONFIDENCE_FLOOR:
@@ -199,7 +201,7 @@ def reconcile(
         if not a_lid and b_lid:
             identity = IDENTITY_MISSING_A
         elif a_lid and not b_lid:
-            identity = IDENTITY_MISSING_B if method != MATCH_NONE else IDENTITY_UNMATCHED
+            identity = IDENTITY_MISSING_B
         elif method == MATCH_NONE:
             identity = IDENTITY_UNMATCHED
         else:

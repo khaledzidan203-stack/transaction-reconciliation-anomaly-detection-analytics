@@ -3,10 +3,14 @@
 Implements the 8-level match method hierarchy defined in config.py.
 Every match result includes the method used and a confidence score so
 that downstream reconciliation and review logic is fully explainable.
+
+Performance: uses inverted token indices to avoid O(n²) full scans
+in the fuzzy matching levels.
 """
 
 from __future__ import annotations
 
+from collections import defaultdict
 from typing import Any
 
 import pandas as pd
@@ -45,6 +49,18 @@ def _best_fuzzy_score(name_a: str, name_b: str) -> float:
     return max(sort_score, partial_score)
 
 
+def _build_token_index(frame: pd.DataFrame, col: str) -> dict[str, set[int]]:
+    """Build a token → set of row indices inverted index."""
+    index: dict[str, set[int]] = defaultdict(set)
+    for idx, row in frame.iterrows():
+        val = row.get(col, "")
+        if val:
+            for token in str(val).split():
+                if len(token) >= 3:
+                    index[token].add(idx)
+    return dict(index)
+
+
 def match_lines(
     a_lines: pd.DataFrame,
     b_lines: pd.DataFrame,
@@ -56,34 +72,36 @@ def match_lines(
     confidence score and fuzzy details.
     """
     # Build B-line lookup indices for fast candidate retrieval
-    b_by_txn_id: dict[str, list[int]] = {}
-    b_by_barcode: dict[str, list[int]] = {}
-    b_by_code: dict[str, list[int]] = {}
-    b_by_norm_name: dict[str, list[int]] = {}
-    b_by_generic: dict[str, list[int]] = {}
+    b_by_txn_id: dict[str, list[int]] = defaultdict(list)
+    b_by_barcode: dict[str, list[int]] = defaultdict(list)
+    b_by_code: dict[str, list[int]] = defaultdict(list)
+    b_by_norm_name: dict[str, list[int]] = defaultdict(list)
+    b_by_generic: dict[str, list[int]] = defaultdict(list)
 
     for idx, row in b_lines.iterrows():
         txn = row.get("_norm_txn_id", "")
         if txn:
-            b_by_txn_id.setdefault(txn, []).append(idx)
+            b_by_txn_id[txn].append(idx)
         bc = row.get("_norm_barcode", "")
         if bc:
-            b_by_barcode.setdefault(bc, []).append(idx)
+            b_by_barcode[bc].append(idx)
         code = row.get("_norm_product_code", "")
         if code:
-            b_by_code.setdefault(code, []).append(idx)
+            b_by_code[code].append(idx)
         nname = row.get("_norm_product_name", "")
         if nname:
-            b_by_norm_name.setdefault(nname, []).append(idx)
+            b_by_norm_name[nname].append(idx)
         generic = normalize_product_name(row.get("generic_name", ""))
         if generic:
-            b_by_generic.setdefault(generic, []).append(idx)
+            b_by_generic[generic].append(idx)
+
+    # Build token-based inverted index for B norm_product_name (fuzzy candidates)
+    b_name_token_index = _build_token_index(b_lines, "_norm_product_name")
 
     results: list[dict[str, Any]] = []
     consumed_b_indices: set[int] = set()
 
     for a_idx, a_row in a_lines.iterrows():
-        a_txn_id = a_row.get("_norm_txn_id", "")
         a_ref_id = a_row.get("_norm_reference_id", "")
         a_product_id = normalize_identifier(a_row.get("product_id", ""))
         a_barcode = a_row.get("_norm_barcode", "")
@@ -99,9 +117,8 @@ def match_lines(
         fuzzy_threshold_band: str = ""
 
         # Level 1: EXACT_PRIMARY_ID — A reference_id == B transaction_id AND product_id matches
-        if a_ref_id and matched_method == MATCH_NONE:
-            candidates = b_by_txn_id.get(a_ref_id, [])
-            for b_idx in candidates:
+        if a_ref_id:
+            for b_idx in b_by_txn_id.get(a_ref_id, []):
                 if b_idx in consumed_b_indices:
                     continue
                 b_row = b_lines.loc[b_idx]
@@ -113,54 +130,44 @@ def match_lines(
 
         # Level 2: EXACT_BARCODE
         if matched_method == MATCH_NONE and a_barcode:
-            candidates = b_by_barcode.get(a_barcode, [])
-            for b_idx in candidates:
-                if b_idx in consumed_b_indices:
-                    continue
-                matched_method = MATCH_EXACT_BARCODE
-                matched_confidence = CONFIDENCE_BARCODE
-                matched_b_idx = b_idx
-                break
+            for b_idx in b_by_barcode.get(a_barcode, []):
+                if b_idx not in consumed_b_indices:
+                    matched_method = MATCH_EXACT_BARCODE
+                    matched_confidence = CONFIDENCE_BARCODE
+                    matched_b_idx = b_idx
+                    break
 
         # Level 3: EXACT_PRODUCT_CODE
         if matched_method == MATCH_NONE and a_code:
-            candidates = b_by_code.get(a_code, [])
-            for b_idx in candidates:
-                if b_idx in consumed_b_indices:
-                    continue
-                matched_method = MATCH_EXACT_PRODUCT_CODE
-                matched_confidence = CONFIDENCE_PRODUCT_CODE
-                matched_b_idx = b_idx
-                break
+            for b_idx in b_by_code.get(a_code, []):
+                if b_idx not in consumed_b_indices:
+                    matched_method = MATCH_EXACT_PRODUCT_CODE
+                    matched_confidence = CONFIDENCE_PRODUCT_CODE
+                    matched_b_idx = b_idx
+                    break
 
         # Level 4: NORMALIZED_NAME
         if matched_method == MATCH_NONE and a_norm_name:
-            candidates = b_by_norm_name.get(a_norm_name, [])
-            for b_idx in candidates:
-                if b_idx in consumed_b_indices:
-                    continue
-                matched_method = MATCH_NORMALIZED_NAME
-                matched_confidence = CONFIDENCE_NORMALIZED_NAME
-                matched_b_idx = b_idx
-                break
+            for b_idx in b_by_norm_name.get(a_norm_name, []):
+                if b_idx not in consumed_b_indices:
+                    matched_method = MATCH_NORMALIZED_NAME
+                    matched_confidence = CONFIDENCE_NORMALIZED_NAME
+                    matched_b_idx = b_idx
+                    break
 
-        # Level 5: FUZZY_NAME — scan B lines with shared generic name first
+        # Level 5: FUZZY_NAME — use token index to find candidates
         if matched_method == MATCH_NONE and a_norm_name:
-            # Gather candidate B indices from generic name pool
             candidate_pool: set[int] = set()
-            if a_generic:
-                for b_idx in b_by_generic.get(a_generic, []):
-                    if b_idx not in consumed_b_indices:
-                        candidate_pool.add(b_idx)
-            # If generic pool is empty, fall back to all unconsumed B lines
-            if not candidate_pool:
-                candidate_pool = {i for i in b_lines.index if i not in consumed_b_indices}
+            for token in a_norm_name.split():
+                if len(token) >= 3 and token in b_name_token_index:
+                    candidate_pool.update(b_name_token_index[token])
+            # Remove already consumed
+            candidate_pool -= consumed_b_indices
 
             best_score = 0.0
             best_b_idx = None
             for b_idx in candidate_pool:
-                b_row = b_lines.loc[b_idx]
-                b_norm_name = b_row.get("_norm_product_name", "")
+                b_norm_name = b_lines.at[b_idx, "_norm_product_name"] if b_idx in b_lines.index else ""
                 if not b_norm_name:
                     continue
                 score = _best_fuzzy_score(a_norm_name, b_norm_name)
@@ -182,30 +189,34 @@ def match_lines(
 
         # Level 6: GENERIC_STRENGTH_EQUIVALENT — same generic + strength, different brand
         if matched_method == MATCH_NONE and a_generic:
-            candidates = b_by_generic.get(a_generic, [])
-            for b_idx in candidates:
+            for b_idx in b_by_generic.get(a_generic, []):
                 if b_idx in consumed_b_indices:
                     continue
-                b_row = b_lines.loc[b_idx]
-                b_norm_name = b_row.get("_norm_product_name", "")
-                # Brand must differ (otherwise Level 4 would have matched)
+                b_norm_name = b_lines.at[b_idx, "_norm_product_name"] if b_idx in b_lines.index else ""
                 if b_norm_name != a_norm_name:
                     matched_method = MATCH_GENERIC_STRENGTH
                     matched_confidence = CONFIDENCE_GENERIC_STRENGTH
                     matched_b_idx = b_idx
                     break
 
-        # Level 7: POSSIBLE_SUBSTITUTE — fuzzy generic match
+        # Level 7: POSSIBLE_SUBSTITUTE — fuzzy generic from generic index
         if matched_method == MATCH_NONE and a_generic:
+            a_generic_first = a_generic.split()[0] if a_generic else ""
+            candidate_b: set[int] = set()
+            if a_generic_first:
+                for pool_key, indices in b_by_generic.items():
+                    if a_generic_first in pool_key.split():
+                        candidate_b.update(indices)
+            candidate_b -= consumed_b_indices
+
             best_score = 0.0
             best_b_idx = None
-            for b_idx, b_row in b_lines.iterrows():
-                if b_idx in consumed_b_indices:
+            for b_idx in candidate_b:
+                b_generic = b_lines.at[b_idx, "generic_name"] if b_idx in b_lines.index else ""
+                b_generic_norm = normalize_product_name(b_generic)
+                if not b_generic_norm:
                     continue
-                b_generic = normalize_product_name(b_row.get("generic_name", ""))
-                if not b_generic:
-                    continue
-                score = _best_fuzzy_score(a_generic, b_generic)
+                score = _best_fuzzy_score(a_generic, b_generic_norm)
                 if score >= 0.70 and score > best_score:
                     best_score = score
                     best_b_idx = b_idx
@@ -223,7 +234,7 @@ def match_lines(
         b_line_id = ""
         b_txn_id = ""
         b_product_id = ""
-        if matched_b_idx is not None:
+        if matched_b_idx is not None and matched_b_idx in b_lines.index:
             b_row = b_lines.loc[matched_b_idx]
             b_line_id = b_row.get("line_id", "")
             b_txn_id = b_row.get("transaction_id", "")

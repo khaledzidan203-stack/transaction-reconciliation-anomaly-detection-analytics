@@ -1,0 +1,126 @@
+{
+  "files": {
+    "branch_master": {
+      "column_names": [
+        "branch_id",
+        "branch_name",
+        "city",
+        "region"
+      ],
+      "columns": 4,
+      "rows": 10,
+      "sha256": "6106152b993fbedfc5916b2b9ca9a188fda58518b5a2e3b18dad27e8b904a28d"
+    },
+    "employee_master": {
+      "column_names": [
+        "employee_id",
+        "employee_label",
+        "branch_id"
+      ],
+      "columns": 3,
+      "rows": 32,
+      "sha256": "c1d61a80e60acbc681101c0880f82cab93fff32d745c08638ed767719463fac1"
+    },
+    "expected_scenarios": {
+      "column_names": [
+        "scenario_id",
+        "scenario_type",
+        "source_a_transaction_id",
+        "source_b_transaction_id",
+        "source_a_line_id",
+        "source_b_line_id",
+        "expected_match_method",
+        "expected_reconciliation_status",
+        "expected_review_required",
+        "expected_notes"
+      ],
+      "columns": 10,
+      "rows": 2260,
+      "sha256": "a013e7b421d5efb7cecdad3cb884b0d74a3429cc7bbe1088d1a12580fcc0cd2d"
+    },
+    "product_master": {
+      "column_names": [
+        "product_id",
+        "product_code",
+        "barcode",
+        "product_name",
+        "generic_name",
+        "brand",
+        "category",
+        "strength",
+        "reference_unit_price"
+      ],
+      "columns": 9,
+      "rows": 150,
+      "sha256": "6be4514f7be6c8dbfba1197aba79044cf56f5004753e5cd3c354447f13e09bb4"
+    },
+    "source_a_headers": {
+      "column_names": [
+        "transaction_id",
+        "branch_id",
+        "employee_id",
+        "transaction_date",
+        "transaction_type",
+        "total_amount",
+        "source"
+      ],
+      "columns": 7,
+      "rows": 2305,
+      "sha256": "06f1bf1b737396126e84a7ac0d1a7e66f37b00ca18f9d0ec48ddf21e60049413"
+    },
+    "source_a_lines": {
+      "column_names": [
+        "line_id",
+        "transaction_id",
+        "product_id",
+        "product_code",
+        "barcode",
+        "product_name",
+        "generic_name",
+        "quantity",
+        "unit_price",
+        "amount",
+        "reference_id",
+        "source"
+      ],
+      "columns": 12,
+      "rows": 2385,
+      "sha256": "e98d48c454d9a40d6e06abc2fe3ce11d27fcc1cf9ab89b34ffe0acafac8a5416"
+    },
+    "source_b_headers": {
+      "column_names": [
+        "transaction_id",
+        "branch_id",
+        "employee_id",
+        "transaction_date",
+        "transaction_type",
+        "total_amount",
+        "source"
+      ],
+      "columns": 7,
+      "rows": 2095,
+      "sha256": "a84c3680dbf8270c37aa1babbff7daacd0d46e7567b550c8535c05b8928c281d"
+    },
+    "source_b_lines": {
+      "column_names": [
+        "line_id",
+        "transaction_id",
+        "product_id",
+        "product_code",
+        "barcode",
+        "product_name",
+        "generic_name",
+        "quantity",
+        "unit_price",
+        "amount",
+        "reference_id",
+        "source"
+      ],
+      "columns": 12,
+      "rows": 2095,
+      "sha256": "3f6d01044866404b3b70f0544756aeb40372bb8c42a08bee13cfd471c816b1dc"
+    }
+  },
+  "generated_at": "2026-09-02",
+  "seed": 20260902
+}
