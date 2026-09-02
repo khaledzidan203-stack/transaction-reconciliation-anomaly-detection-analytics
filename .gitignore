@@ -1,0 +1,87 @@
+# ============================================================
+# Transaction Reconciliation & Anomaly Detection Analytics
+# Portfolio Repository — .gitignore
+# ============================================================
+
+# --- OS / shell metadata ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Data files that may contain real business data ---
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+
+# --- Logs ---
+*.log
+
+# --- Credentials and secrets (NEVER commit) ---
+.env
+.env.*
+credentials*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets.json
+service-account*.json
+
+# --- Archives ---
+*.zip
+
+# --- Sensitive directories ---
+raw/
+private/
+confidential/
+exports/
+output/
+output_*/
+tmp/
+temp/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# --- Node tooling ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# --- Backups and scratch ---
+*.bak
+*.orig
+*.rej
+
+# --- Local agent / tool scratch ---
+.qwen/
+
+# ============================================================
+# ALLOW synthetic sample data under data/sample/
+# ============================================================
+# Re-allow CSV files that are intentionally placed as synthetic samples
+!data/sample/*.csv

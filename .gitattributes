@@ -1,0 +1,47 @@
+# Repository-wide line-ending policy.
+# Explicit eol=lf here overrides each contributor's local core.autocrlf, so
+# clones and checkouts stay identical regardless of machine configuration.
+
+* text=auto eol=lf
+
+# Source, config and documentation
+*.html  text eol=lf
+*.htm   text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.jsx   text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sql   text eol=lf
+*.py    text eol=lf
+*.txt   text eol=lf
+*.csv   text eol=lf
+*.sh    text eol=lf
+*.gitignore     text eol=lf
+*.gitattributes text eol=lf
+
+# Binary formats must never run through the text converter.
+*.png  -text
+*.jpg  -text
+*.jpeg -text
+*.gif  -text
+*.bmp  -text
+*.webp -text
+*.ico  -text
+*.zip  -text
+*.gz   -text
+*.7z   -text
+*.woff -text
+*.woff2 -text
+*.xlsx -text
+*.xls  -text
+*.xlsm -text
+*.pdf  -text
+*.db   -text
+*.sqlite -text
