@@ -34,6 +34,7 @@ from .config import (
     MATCH_NONE,
     MATCH_NORMALIZED_NAME,
     MATCH_POSSIBLE_SUBSTITUTE,
+    REVIEW_CONFIDENCE_FLOOR,
     SOURCE_A,
     SOURCE_B,
 )
@@ -226,15 +227,32 @@ def match_lines(
                 matched_b_idx = best_b_idx
                 fuzzy_score = best_score
 
-        # Mark B line as consumed
+        # Only consume B lines for deterministic matches or high-confidence
+        # fuzzy matches.  Heuristic matches (GENERIC_STRENGTH, SUBSTITUTE)
+        # and fuzzy matches below the confidence floor are reported as
+        # potential matches but leave the B line free so reconciliation
+        # can flag unconsumed B lines as MISSING_IN_SOURCE_A.
+        _deterministic_methods = {
+            MATCH_EXACT_PRIMARY_ID, MATCH_EXACT_BARCODE,
+            MATCH_EXACT_PRODUCT_CODE, MATCH_NORMALIZED_NAME,
+        }
+        b_consumed = False
         if matched_b_idx is not None:
-            consumed_b_indices.add(matched_b_idx)
+            if matched_method in _deterministic_methods:
+                consumed_b_indices.add(matched_b_idx)
+                b_consumed = True
+            elif matched_confidence >= REVIEW_CONFIDENCE_FLOOR and matched_method == MATCH_FUZZY_NAME:
+                consumed_b_indices.add(matched_b_idx)
+                b_consumed = True
+            # GENERIC_STRENGTH and POSSIBLE_SUBSTITUTE: report but don't consume
 
-        # Collect result
+        # Collect result — if the B line was not consumed, treat as unmatched
+        # for reconciliation purposes but keep the match_method and confidence
+        # as metadata for the review queue.
         b_line_id = ""
         b_txn_id = ""
         b_product_id = ""
-        if matched_b_idx is not None and matched_b_idx in b_lines.index:
+        if matched_b_idx is not None and b_consumed and matched_b_idx in b_lines.index:
             b_row = b_lines.loc[matched_b_idx]
             b_line_id = b_row.get("line_id", "")
             b_txn_id = b_row.get("transaction_id", "")

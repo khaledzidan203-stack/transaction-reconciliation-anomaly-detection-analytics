@@ -201,7 +201,14 @@ def reconcile(
         if not a_lid and b_lid:
             identity = IDENTITY_MISSING_A
         elif a_lid and not b_lid:
-            identity = IDENTITY_MISSING_B
+            # A line with no B counterpart. If a heuristic match was found
+            # (but not consumed), the A line is UNRESOLVED rather than
+            # purely missing — a potential match exists but isn't confident.
+            if method in (MATCH_GENERIC_STRENGTH, MATCH_POSSIBLE_SUBSTITUTE,
+                          MATCH_FUZZY_NAME):
+                identity = IDENTITY_UNMATCHED
+            else:
+                identity = IDENTITY_MISSING_B
         elif method == MATCH_NONE:
             identity = IDENTITY_UNMATCHED
         else:
