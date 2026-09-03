@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaction Reconciliation &amp; Anomaly Detection Analytics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --bg-card-hover: #263348;
+    --border: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #3b82f6;
+    --accent-blue-light: #60a5fa;
+    --accent-teal: #14b8a6;
+    --accent-teal-light: #2dd4bf;
+    --accent-slate: #64748b;
+    --accent-green: #22c55e;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+    --accent-cyan: #06b6d4;
+    --accent-orange: #f97316;
+    --accent-pink: #ec4899;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -4px rgba(0,0,0,0.2);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-blue-light), var(--accent-teal-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.3px;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: var(--accent-blue-light);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .header-badge .dot {
+    width: 7px; height: 7px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Main container */
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 40px 48px;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon {
+    width: 20px; height: 20px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  /* KPI Cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(59,130,246,0.3);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+  .kpi-card.blue::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
+  .kpi-card.teal::before { background: linear-gradient(90deg, var(--accent-teal), var(--accent-green)); }
+  .kpi-card.amber::before { background: linear-gradient(90deg, var(--accent-amber), var(--accent-orange)); }
+  .kpi-card.red::before { background: linear-gradient(90deg, var(--accent-red), var(--accent-pink)); }
+  .kpi-card.purple::before { background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); }
+  .kpi-card.slate::before { background: linear-gradient(90deg, var(--accent-slate), var(--accent-blue)); }
+  .kpi-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+  .kpi-sub {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  /* Chart grid */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 900px) {
+    .chart-grid { grid-template-columns: 1fr; }
+  }
+  .chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: all 0.25s ease;
+  }
+  .chart-card:hover {
+    border-color: rgba(59,130,246,0.25);
+    box-shadow: var(--shadow);
+  }
+  .chart-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+  }
+  .chart-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .chart-wrapper.pie { max-width: 340px; margin: 0 auto; }
+
+  /* Full-width chart */
+  .chart-full {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    transition: all 0.25s ease;
+  }
+  .chart-full:hover { border-color: rgba(59,130,246,0.25); box-shadow: var(--shadow); }
+  .chart-full h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+  }
+
+  /* Tables */
+  .table-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    overflow-x: auto;
+  }
+  .table-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead th {
+    background: rgba(59,130,246,0.08);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(51,65,85,0.5);
+    color: var(--text-secondary);
+  }
+  tbody tr:hover {
+    background: rgba(59,130,246,0.04);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .badge-critical { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+  .badge-high { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.25); }
+  .badge-medium { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
+  .badge-low { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
+  .badge-open { background: rgba(59,130,246,0.15); color: var(--accent-blue-light); border: 1px solid rgba(59,130,246,0.25); }
+  .badge-pending { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.25); }
+  .badge-in-progress { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.25); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+  .footer .privacy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(100,116,139,0.1);
+    border: 1px solid rgba(100,116,139,0.2);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+  }
+  .delay-1 { animation-delay: 0.08s; }
+  .delay-2 { animation-delay: 0.16s; }
+  .delay-3 { animation-delay: 0.24s; }
+  .delay-4 { animation-delay: 0.32s; }
+  .delay-5 { animation-delay: 0.40s; }
+  .delay-6 { animation-delay: 0.48s; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header { padding: 20px 20px; }
+    .header h1 { font-size: 1.2rem; }
+    .container { padding: 20px 16px 36px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .kpi-value { font-size: 1.4rem; }
+    .chart-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent-slate); }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <h1>Transaction Reconciliation &amp; Anomaly Detection Analytics</h1>
+    <div class="header-badge">
+      <span class="dot"></span>
+      Portfolio Dashboard &mdash; Synthetic Data
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ===== EXECUTIVE SUMMARY KPIs ===== -->
+  <div class="section-title animate-in">
+    <span class="icon" style="background:rgba(59,130,246,0.15);color:var(--accent-blue-light);">&#9670;</span>
+    Executive Summary
+  </div>
+  <div class="kpi-grid" id="kpiGrid"></div>
+
+  <!-- ===== CHARTS ROW 1 ===== -->
+  <div class="chart-grid">
+    <div class="chart-card animate-in delay-1">
+      <h3>Reconciliation Status Distribution</h3>
+      <div class="chart-wrapper pie">
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card animate-in delay-2">
+      <h3>Match Method Distribution</h3>
+      <div class="chart-wrapper">
+        <canvas id="methodChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FINANCIAL EXPOSURE BY BRANCH ===== -->
+  <div class="chart-full animate-in delay-3">
+    <h3>Financial Exposure by Branch</h3>
+    <div class="chart-wrapper">
+      <canvas id="branchChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ===== MONTHLY TREND ===== -->
+  <div class="chart-full animate-in delay-4">
+    <h3>Monthly Trend &mdash; Match Rate vs Exception Rate</h3>
+    <div class="chart-wrapper">
+      <canvas id="trendChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ===== ANOMALY SUMMARY ===== -->
+  <div class="table-card animate-in delay-5">
+    <h3>Anomaly Summary</h3>
+    <table id="anomalyTable">
+      <thead>
+        <tr>
+          <th>Anomaly Type</th>
+          <th>Count</th>
+          <th>Severity</th>
+          <th>Share %</th>
+          <th>Distribution</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- ===== REVIEW QUEUE ===== -->
+  <div class="table-card animate-in delay-6">
+    <h3>Review Queue &mdash; Top 20 Items</h3>
+    <table id="reviewTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Transaction ID</th>
+          <th>Branch</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Anomaly</th>
+          <th>Exposure ($)</th>
+          <th>Confidence %</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="privacy">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Privacy Notice
+  </div>
+  <p>This dashboard contains <strong>fully synthetic data</strong> generated for portfolio demonstration purposes only.</p>
+  <p>No real company names, financial records, or personally identifiable information are included.</p>
+  <p style="margin-top:4px;">Transaction Reconciliation &amp; Anomaly Detection Analytics &copy; 2026</p>
+</footer>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const DATA = {
+  summary_kpis: {
+    total_lines: 2385, matched_lines: 1163, exception_lines: 1142,
+    match_rate_pct: 48.76, exception_rate_pct: 47.88,
+    total_absolute_exposure: 825645.25, unresolved_exposure: 329455.11,
+    average_confidence: 84.78, review_required_count: 1146, review_rate_pct: 48.05
+  },
+  status_distribution: {
+    MATCHED: 1159, QUANTITY_AND_AMOUNT_DIFFERENCE: 860,
+    MISSING_IN_SOURCE_B: 268, CREDIT: 45, REVERSAL: 35,
+    PRICE_DIFFERENCE: 10, MATCHED_WITH_SUBSTITUTE: 4, AMOUNT_DIFFERENCE: 4
+  },
+  match_method_distribution: {
+    EXACT_PRIMARY_ID: 1900, UNMATCHED: 290, EXACT_BARCODE: 110,
+    EXACT_PRODUCT_CODE: 55, NORMALIZED_NAME: 15, FUZZY_NAME: 5
+  },
+  anomaly_summary: {
+    HIGH_VALUE_OUTLIER: 12, LOW_CONFIDENCE_MATCH: 30,
+    DATA_QUALITY_FAILURE: 25, MASTER_DATA_MISSING: 30,
+    DUPLICATE_KEY: 45, UNRESOLVED_TRANSACTION: 25, MISSING_COUNTERPART: 120
+  },
+  review_priority_distribution: { CRITICAL: 45, HIGH: 230, MEDIUM: 540, LOW: 331 },
+  kpi_by_branch: [
+    { branch_id: "BR-001", branch_name: "Northport Branch", match_rate_pct: 52.1, total_absolute_exposure: 85000 },
+    { branch_id: "BR-002", branch_name: "Eastvale Branch", match_rate_pct: 48.3, total_absolute_exposure: 92000 },
+    { branch_id: "BR-003", branch_name: "Southfield Branch", match_rate_pct: 51.0, total_absolute_exposure: 78000 },
+    { branch_id: "BR-004", branch_name: "Westbrook Branch", match_rate_pct: 45.2, total_absolute_exposure: 110000 },
+    { branch_id: "BR-005", branch_name: "Cedar Hills Branch", match_rate_pct: 49.8, total_absolute_exposure: 88000 },
+    { branch_id: "BR-006", branch_name: "Maple Ridge Branch", match_rate_pct: 47.5, total_absolute_exposure: 95000 },
+    { branch_id: "BR-007", branch_name: "Pine Valley Branch", match_rate_pct: 50.3, total_absolute_exposure: 72000 },
+    { branch_id: "BR-008", branch_name: "Oakwood Branch", match_rate_pct: 46.1, total_absolute_exposure: 105000 },
+    { branch_id: "BR-009", branch_name: "Riverside Branch", match_rate_pct: 53.4, total_absolute_exposure: 55000 },
+    { branch_id: "BR-010", branch_name: "Lakeside Branch", match_rate_pct: 48.9, total_absolute_exposure: 45645 }
+  ],
+  kpi_by_month: [
+    { month_key: "2026-01", match_rate_pct: 50.2, exception_rate_pct: 46.5, total_absolute_exposure: 195000 },
+    { month_key: "2026-02", match_rate_pct: 49.1, exception_rate_pct: 47.8, total_absolute_exposure: 210000 },
+    { month_key: "2026-03", match_rate_pct: 48.3, exception_rate_pct: 48.9, total_absolute_exposure: 215000 },
+    { month_key: "2026-04", match_rate_pct: 47.5, exception_rate_pct: 49.5, total_absolute_exposure: 205645 }
+  ]
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+const fmtNum = (n, decimals = 0) => n.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+const fmtCurrency = (n) => '$' + fmtNum(n, 2);
+const pct = (n) => fmtNum(n, 1) + '%';
+
+const STATUS_COLORS = {
+  MATCHED: '#22c55e',
+  QUANTITY_AND_AMOUNT_DIFFERENCE: '#f59e0b',
+  MISSING_IN_SOURCE_B: '#ef4444',
+  CREDIT: '#3b82f6',
+  REVERSAL: '#a855f7',
+  PRICE_DIFFERENCE: '#f97316',
+  MATCHED_WITH_SUBSTITUTE: '#06b6d4',
+  AMOUNT_DIFFERENCE: '#ec4899'
+};
+
+const METHOD_COLORS = ['#3b82f6','#ef4444','#14b8a6','#f59e0b','#a855f7','#ec4899'];
+
+// ============================================================
+// KPI CARDS
+// ============================================================
+(function renderKPIs() {
+  const k = DATA.summary_kpis;
+  const cards = [
+    { label: 'Total Lines', value: fmtNum(k.total_lines), sub: `Matched: ${fmtNum(k.matched_lines)}`, cls: 'blue' },
+    { label: 'Match Rate', value: pct(k.match_rate_pct), sub: `${fmtNum(k.matched_lines)} of ${fmtNum(k.total_lines)}`, cls: 'teal' },
+    { label: 'Exception Rate', value: pct(k.exception_rate_pct), sub: `${fmtNum(k.exception_lines)} lines`, cls: 'amber' },
+    { label: 'Total Exposure', value: fmtCurrency(k.total_absolute_exposure), sub: `Unresolved: ${fmtCurrency(k.unresolved_exposure)}`, cls: 'red' },
+    { label: 'Avg Confidence', value: pct(k.average_confidence), sub: 'Weighted mean', cls: 'purple' },
+    { label: 'Review Rate', value: pct(k.review_rate_pct), sub: `${fmtNum(k.review_required_count)} items`, cls: 'slate' }
+  ];
+  const grid = document.getElementById('kpiGrid');
+  cards.forEach((c, i) => {
+    const div = document.createElement('div');
+    div.className = `kpi-card ${c.cls} animate-in delay-${i + 1}`;
+    div.innerHTML = `<div class="kpi-label">${c.label}</div><div class="kpi-value">${c.value}</div><div class="kpi-sub">${c.sub}</div>`;
+    grid.appendChild(div);
+  });
+})();
+
+// ============================================================
+// STATUS DISTRIBUTION — DOUGHNUT
+// ============================================================
+(function renderStatusChart() {
+  const labels = Object.keys(DATA.status_distribution);
+  const values = Object.values(DATA.status_distribution);
+  const colors = labels.map(l => STATUS_COLORS[l] || '#64748b');
+  const friendly = labels.map(l => l.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase()));
+
+  new Chart(document.getElementById('statusChart'), {
+    type: 'doughnut',
+    data: {
+      labels: friendly,
+      datasets: [{
+        data: values,
+        backgroundColor: colors,
+        borderColor: '#1e293b',
+        borderWidth: 2,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: '55%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: '#94a3b8', font: { size: 11 }, padding: 12, usePointStyle: true, pointStyleWidth: 10 }
+        },
+        tooltip: {
+          backgroundColor: '#1e293b',
+          titleColor: '#f1f5f9',
+          bodyColor: '#94a3b8',
+          borderColor: '#334155',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => {
+              const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+              return ` ${ctx.label}: ${ctx.raw.toLocaleString()} (${((ctx.raw / total) * 100).toFixed(1)}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// MATCH METHOD DISTRIBUTION — HORIZONTAL BAR
+// ============================================================
+(function renderMethodChart() {
+  const raw = DATA.match_method_distribution;
+  const labels = Object.keys(raw).map(l => l.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase()));
+  const values = Object.values(raw);
+
+  new Chart(document.getElementById('methodChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: METHOD_COLORS,
+        borderColor: METHOD_COLORS.map(c => c + 'cc'),
+        borderWidth: 1,
+        borderRadius: 6,
+        barPercentage: 0.7
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8',
+          borderColor: '#334155', borderWidth: 1,
+          callbacks: { label: ctx => ` ${ctx.raw.toLocaleString()} transactions` }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(51,65,85,0.4)' },
+          ticks: { color: '#94a3b8', font: { size: 11 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: '#94a3b8', font: { size: 11 } }
+        }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// FINANCIAL EXPOSURE BY BRANCH — BAR
+// ============================================================
+(function renderBranchChart() {
+  const branches = DATA.kpi_by_branch;
+  const labels = branches.map(b => b.branch_name.replace(' Branch', ''));
+  const exposures = branches.map(b => b.total_absolute_exposure);
+  const rates = branches.map(b => b.match_rate_pct);
+
+  new Chart(document.getElementById('branchChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Exposure ($)',
+          data: exposures,
+          backgroundColor: 'rgba(59,130,246,0.7)',
+          borderColor: 'rgba(59,130,246,1)',
+          borderWidth: 1,
+          borderRadius: 6,
+          yAxisID: 'y'
+        },
+        {
+          label: 'Match Rate %',
+          data: rates,
+          type: 'line',
+          borderColor: '#14b8a6',
+          backgroundColor: 'rgba(20,184,166,0.15)',
+          pointBackgroundColor: '#14b8a6',
+          pointBorderColor: '#1e293b',
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8',
+          borderColor: '#334155', borderWidth: 1,
+          callbacks: {
+            label: ctx => {
+              if (ctx.dataset.label === 'Exposure ($)') return ` Exposure: $${ctx.raw.toLocaleString()}`;
+              return ` Match Rate: ${ctx.raw.toFixed(1)}%`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#94a3b8', font: { size: 11 } }
+        },
+        y: {
+          position: 'left',
+          grid: { color: 'rgba(51,65,85,0.4)' },
+          ticks: {
+            color: '#94a3b8', font: { size: 11 },
+            callback: v => '$' + (v / 1000).toFixed(0) + 'k'
+          },
+          title: { display: true, text: 'Exposure ($)', color: '#64748b', font: { size: 11 } }
+        },
+        y1: {
+          position: 'right',
+          grid: { display: false },
+          min: 40, max: 60,
+          ticks: { color: '#94a3b8', font: { size: 11 }, callback: v => v + '%' },
+          title: { display: true, text: 'Match Rate %', color: '#64748b', font: { size: 11 } }
+        }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// MONTHLY TREND — LINE
+// ============================================================
+(function renderTrendChart() {
+  const months = DATA.kpi_by_month;
+  const labels = months.map(m => {
+    const [y, mo] = m.month_key.split('-');
+    return new Date(y, mo - 1).toLocaleString('en-US', { month: 'short', year: 'numeric' });
+  });
+
+  new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Match Rate %',
+          data: months.map(m => m.match_rate_pct),
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.1)',
+          pointBackgroundColor: '#3b82f6',
+          pointBorderColor: '#1e293b',
+          pointBorderWidth: 2,
+          pointRadius: 6,
+          tension: 0.35,
+          fill: true
+        },
+        {
+          label: 'Exception Rate %',
+          data: months.map(m => m.exception_rate_pct),
+          borderColor: '#ef4444',
+          backgroundColor: 'rgba(239,68,68,0.1)',
+          pointBackgroundColor: '#ef4444',
+          pointBorderColor: '#1e293b',
+          pointBorderWidth: 2,
+          pointRadius: 6,
+          tension: 0.35,
+          fill: true
+        },
+        {
+          label: 'Total Exposure ($)',
+          data: months.map(m => m.total_absolute_exposure),
+          borderColor: '#f59e0b',
+          backgroundColor: 'transparent',
+          pointBackgroundColor: '#f59e0b',
+          pointBorderColor: '#1e293b',
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          borderDash: [6, 4],
+          tension: 0.35,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8',
+          borderColor: '#334155', borderWidth: 1,
+          callbacks: {
+            label: ctx => {
+              if (ctx.dataset.label === 'Total Exposure ($)') return ` Exposure: $${ctx.raw.toLocaleString()}`;
+              return ` ${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(51,65,85,0.3)' },
+          ticks: { color: '#94a3b8', font: { size: 11 } }
+        },
+        y: {
+          position: 'left',
+          min: 44, max: 52,
+          grid: { color: 'rgba(51,65,85,0.4)' },
+          ticks: { color: '#94a3b8', font: { size: 11 }, callback: v => v + '%' },
+          title: { display: true, text: 'Rate %', color: '#64748b', font: { size: 11 } }
+        },
+        y1: {
+          position: 'right',
+          grid: { display: false },
+          ticks: {
+            color: '#94a3b8', font: { size: 11 },
+            callback: v => '$' + (v / 1000).toFixed(0) + 'k'
+          },
+          title: { display: true, text: 'Exposure ($)', color: '#64748b', font: { size: 11 } }
+        }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// ANOMALY SUMMARY TABLE
+// ============================================================
+(function renderAnomalyTable() {
+  const raw = DATA.anomaly_summary;
+  const total = Object.values(raw).reduce((a, b) => a + b, 0);
+  const severityMap = {
+    HIGH_VALUE_OUTLIER: 'critical',
+    LOW_CONFIDENCE_MATCH: 'high',
+    DATA_QUALITY_FAILURE: 'high',
+    MASTER_DATA_MISSING: 'medium',
+    DUPLICATE_KEY: 'medium',
+    UNRESOLVED_TRANSACTION: 'high',
+    MISSING_COUNTERPART: 'critical'
+  };
+  const tbody = document.querySelector('#anomalyTable tbody');
+  Object.entries(raw).forEach(([key, count]) => {
+    const share = ((count / total) * 100).toFixed(1);
+    const sev = severityMap[key] || 'low';
+    const barWidth = Math.round((count / Math.max(...Object.values(raw))) * 100);
+    const barColor = sev === 'critical' ? '#ef4444' : sev === 'high' ? '#f97316' : sev === 'medium' ? '#f59e0b' : '#22c55e';
+    const friendly = key.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight:500;color:var(--text-primary)">${friendly}</td>
+      <td style="font-weight:600;color:var(--text-primary)">${count}</td>
+      <td><span class="badge badge-${sev}">${sev}</span></td>
+      <td>${share}%</td>
+      <td style="width:180px;">
+        <div style="background:rgba(51,65,85,0.5);border-radius:4px;height:8px;overflow:hidden;">
+          <div style="width:${barWidth}%;height:100%;background:${barColor};border-radius:4px;transition:width 0.6s ease;"></div>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+})();
+
+// ============================================================
+// REVIEW QUEUE TABLE — TOP 20
+// ============================================================
+(function renderReviewTable() {
+  const branches = DATA.kpi_by_branch;
+  const anomalyTypes = Object.keys(DATA.anomaly_summary);
+  const priorities = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'];
+  const statuses = ['OPEN', 'PENDING', 'IN_PROGRESS'];
+  const rows = [];
+
+  for (let i = 0; i < 20; i++) {
+    const branch = branches[i % branches.length];
+    const isCritical = i < 5;
+    const isHigh = i >= 5 && i < 12;
+    const priority = isCritical ? 'CRITICAL' : isHigh ? 'HIGH' : (i < 16 ? 'MEDIUM' : 'LOW');
+    const status = i < 3 ? 'OPEN' : (i < 8 ? 'IN_PROGRESS' : 'PENDING');
+    const anomaly = isCritical ? 'HIGH_VALUE_OUTLIER' : (isHigh ? 'UNRESOLVED_TRANSACTION' : anomalyTypes[i % anomalyTypes.length]);
+    const exposure = isCritical ? (8000 + Math.random() * 12000) : isHigh ? (2000 + Math.random() * 6000) : (200 + Math.random() * 1800);
+    const confidence = isCritical ? (55 + Math.random() * 20) : isHigh ? (65 + Math.random() * 20) : (75 + Math.random() * 20);
+    rows.push({
+      id: `TXN-${String(10000 + i * 137).slice(-5)}`,
+      branch: branch.branch_name.replace(' Branch', ''),
+      priority,
+      status,
+      anomaly: anomaly.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase()),
+      exposure: Math.round(exposure * 100) / 100,
+      confidence: Math.round(confidence * 10) / 10
+    });
+  }
+
+  const tbody = document.querySelector('#reviewTable tbody');
+  rows.forEach((r, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="color:var(--text-muted)">${i + 1}</td>
+      <td style="font-weight:600;color:var(--text-primary);font-family:monospace;font-size:0.82rem">${r.id}</td>
+      <td>${r.branch}</td>
+      <td><span class="badge badge-${r.priority.toLowerCase()}">${r.priority}</span></td>
+      <td><span class="badge badge-${r.status.toLowerCase().replace('_', '-')}">${r.status.replace('_', ' ')}</span></td>
+      <td>${r.anomaly}</td>
+      <td style="font-weight:600;color:${r.priority === 'CRITICAL' ? '#f87171' : r.priority === 'HIGH' ? '#fb923c' : 'var(--text-primary)'}">${fmtCurrency(r.exposure)}</td>
+      <td>${pct(r.confidence)}</td>`;
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+
+</body>
+</html>

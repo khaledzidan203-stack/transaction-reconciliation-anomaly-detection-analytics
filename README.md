@@ -1,351 +1,238 @@
 # Transaction Reconciliation & Anomaly Detection Analytics
 
-> A portfolio-grade analytics project demonstrating multi-source transaction reconciliation, explainable matching, anomaly detection, exception management, financial exposure analysis, and KPI reporting — built entirely with synthetic data.
+> A portfolio-grade analytics project demonstrating multi-source transaction reconciliation, explainable hierarchical matching, anomaly detection, exception management, financial exposure analysis, and KPI reporting — built entirely with deterministic synthetic data.
 
 ---
 
 ## Executive Summary
 
-This project implements a complete analytical pipeline for reconciling transaction data across multiple source systems. It demonstrates production-style data engineering, reconciliation logic, anomaly detection, and reporting — all built with fully synthetic data for portfolio demonstration purposes.
+This project implements a complete analytical pipeline for reconciling transaction data across two source systems (a POS system and a Reference system). It demonstrates production-style data engineering, an 8-level explainable matching engine, rule-based anomaly detection, financial exposure decomposition, and KPI reporting — all built with fully synthetic data for portfolio demonstration purposes.
 
-**This project uses fully synthetic data created specifically for portfolio demonstration purposes. It does not contain real customer, employee, transaction, prescription, company, or proprietary business data.**
-
----
-
-## Business Problem
-
-Organizations that process transactions across multiple systems frequently face reconciliation challenges:
-
-- Transactions recorded in one system may be missing, duplicated, or altered in another
-- Product identifiers, names, and codes may not align across systems
-- Quantities, prices, and amounts may diverge due to timing, rounding, or data-entry errors
-- Manual review queues accumulate exceptions that require analyst judgment
-- Financial exposure from unreconciled items must be quantified and tracked
-- Anomalies in transaction patterns may indicate data quality issues or operational risks
-
-A robust reconciliation framework addresses these challenges through deterministic matching, constrained fuzzy matching, data quality controls, anomaly detection, and transparent exposure calculation.
+**This project uses fully synthetic data created specifically for portfolio demonstration purposes. It does not contain real customer, employee, transaction, company, or proprietary business data.**
 
 ---
 
-## Project Objectives
+## Key Features
 
-1. **Demonstrate multi-source reconciliation** — match transactions across two or more source systems using a transparent, explainable matching hierarchy
-2. **Implement data quality engineering** — validate schemas, detect anomalies, flag data quality issues before reconciliation
-3. **Build an explainable matching engine** — every match decision is traceable with method, confidence score, and supporting evidence
-4. **Calculate financial exposure** — quantify unreconciled amounts by category, branch, employee, and time period
-5. **Detect analytical anomalies** — identify unusual patterns in transaction volume, amounts, match rates, and exception concentrations
-6. **Generate review queues** — classify exceptions for manual analyst review with priority and context
-7. **Produce analytical KPIs** — match rates, exception rates, exposure metrics, trend analysis
-8. **Deliver portfolio-grade documentation** — architecture, methodology, data dictionaries, test cases, Power BI design
-
----
-
-## Why Reconciliation Matters
-
-Reconciliation is a foundational analytical capability across industries:
-
-- **Financial services** — reconcile trades, settlements, and ledger entries
-- **Healthcare / pharmacy** — reconcile dispensing records across POS, insurance, and regulatory systems
-- **Retail / e-commerce** — reconcile orders, shipments, and payments
-- **Telecommunications** — reconcile usage records across billing systems
-- **Supply chain** — reconcile inventory movements across warehouses and logistics systems
-
-The analytical patterns are universal: multi-source matching, exception classification, exposure quantification, and anomaly detection.
+- **Deterministic synthetic data generation** — 150 products, 10 branches, 32 employees, 2,200+ transactions across 4 months with a fixed random seed (`20260902`)
+- **8-level hierarchical matching engine** — transparent, explainable match decisions with confidence scores from 100 to 0
+- **28 controlled injection scenarios** — ground-truth tagged data covering every match level, variance type, and data quality exception
+- **4-component reconciliation** — identity, quantity, price, and amount statuses derived independently; overall status derived from components
+- **17 reconciliation statuses** — from `MATCHED` through `UNRESOLVED`, covering variances, credits, reversals, and data quality blocks
+- **Financial exposure decomposition** — signed, absolute, quantity, price, amount, unresolved, and review exposure
+- **7 rule-based anomaly detectors** — severity-graded (LOW / MEDIUM / HIGH / CRITICAL) anomaly flagging
+- **Prioritized review queue** — CRITICAL / HIGH / MEDIUM / LOW priority based on status, exposure, and anomaly flags
+- **KPI framework** — summary, by-branch, and by-month metrics with configurable thresholds
+- **Full reproducibility** — byte-identical output on every run; SHA-256 manifest verification
 
 ---
 
 ## Architecture
 
 ```
-Synthetic Source Data
-    ↓
-Ingestion
-    ↓
-Schema Validation
-    ↓
-Normalization
-    ↓
-Data Quality Checks
-    ↓
-Reference Master Mapping
-    ↓
-Matching Engine
-    ↓
-Quantity / Price / Amount Validation
-    ↓
-Reconciliation Classification
-    ↓
-Financial Exposure Calculation
-    ↓
-Anomaly Detection
-    ↓
-Exception / Manual Review Queue
-    ↓
-Analytical KPIs
-    ↓
-SQL Analysis
-    ↓
-HTML Dashboard
-    ↓
-Portfolio Documentation
+┌────────────────────────────────────────────────────────────────────┐
+│                     Synthetic Data Generator                       │
+│   150 products · 10 branches · 32 employees · 2,200+ txns        │
+│   28 scenario types with ground truth · Fixed seed 20260902       │
+└──────────────┬─────────────────────────────────────────────────────┘
+               │ CSV files (product_master, branch_master, etc.)
+               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        Ingestion Layer                              │
+│   load_csvs() → RawDataset with normalized key columns             │
+│   _norm_product_name · _norm_barcode · _norm_product_code          │
+│   _qty_float · _price_float · _amount_float                        │
+└──────────────┬──────────────────────────────────────────────────────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+┌──────────────┐ ┌───────────────────┐
+│Schema        │ │Data Quality       │
+│Validation    │ │Engine             │
+│7 tables ·    │ │Duplicate keys     │
+│column checks │ │Malformed IDs      │
+│              │ │Invalid numerics   │
+│              │ │Missing master refs│
+└──────────────┘ └───────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Master Mapping Layer                              │
+│   product_by_id · product_by_barcode · product_by_code             │
+│   product_by_norm_name · product_by_generic                        │
+│   branch_by_id · employee_by_id                                    │
+└──────────────┬──────────────────────────────────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│               8-Level Matching Engine                               │
+│                                                                    │
+│  1. EXACT_PRIMARY_ID      (confidence: 100)                        │
+│  2. EXACT_BARCODE         (confidence:  97)                        │
+│  3. EXACT_PRODUCT_CODE    (confidence:  95)                        │
+│  4. NORMALIZED_NAME       (confidence:  90)                        │
+│  5. FUZZY_NAME            (confidence: score, accept ≥0.92)        │
+│  6. GENERIC_STRENGTH      (confidence:  85)                        │
+│  7. POSSIBLE_SUBSTITUTE   (confidence:  70)                        │
+│  8. UNMATCHED             (confidence:   0)                        │
+│                                                                    │
+│  Inverted token index for O(n) fuzzy candidate retrieval           │
+└──────────────┬──────────────────────────────────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              Reconciliation Engine                                   │
+│                                                                    │
+│  Component statuses:  Identity → Quantity → Price → Amount          │
+│  Overall status derived from component combination                  │
+│  17 statuses · Review routing · Tolerance checks                    │
+│  Price ±0.01 · Amount ±0.02 · Quantity ±0.0001                     │
+└──────────────┬──────────────────────────────────────────────────────┘
+               │
+       ┌───────┴────────────┐
+       ▼                    ▼
+┌──────────────┐  ┌──────────────────┐
+│Exposure      │  │Anomaly Detection │
+│Computation   │  │7 rules · 4 levels│
+│              │  │                  │
+│Signed        │  │HIGH_VALUE_OUTLIER│
+│Absolute      │  │LOW_CONFIDENCE    │
+│Qty / Price / │  │DQ_FAILURE        │
+│Amount decom. │  │MASTER_MISSING    │
+│Unresolved    │  │DUPLICATE_KEY     │
+│Review        │  │UNRESOLVED_TXN    │
+│              │  │MISSING_COUNTER   │
+└──────┬───────┘  └────────┬─────────┘
+       │                   │
+       └───────┬───────────┘
+               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                  Review Queue Builder                                │
+│  Priority: CRITICAL / HIGH / MEDIUM / LOW                           │
+│  Sorted by priority then exposure descending                        │
+└──────────────┬──────────────────────────────────────────────────────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+┌──────────────┐ ┌───────────────────┐
+│KPI Framework │ │Reporting Layer    │
+│              │ │                   │
+│Summary       │ │reconciliation_    │
+│By branch     │ │  results.csv      │
+│By month      │ │data_quality_      │
+│              │ │  issues.csv       │
+│10 KPIs each  │ │anomaly_results.csv│
+│              │ │review_queue.csv   │
+│              │ │kpi_*.csv          │
+│              │ │dashboard_data.json│
+└──────────────┘ └───────────────────┘
 ```
 
 ---
 
-## Data Model
+## Quick Start
 
-| Entity | Grain |
-|---|---|
-| `transaction_header` | One row per transaction per source system |
-| `transaction_line` | One row per transaction item per source system |
-| `product_master` | One row per synthetic product |
-| `branch_master` | One row per synthetic branch |
-| `employee_master` | One row per synthetic employee |
-| `reconciliation_result` | One row per reconciled transaction-line comparison |
-| `data_quality_issue` | One row per detected DQ issue |
-| `anomaly_result` | One row per detected analytical anomaly |
-| `review_queue` | One row per unresolved / low-confidence / exception case |
+```bash
+# Clone the repository
+git clone <repository-url>
+cd transaction-reconciliation-anomaly-detection-analytics-portfolio
 
-See `docs/DATA_DICTIONARY.md` for full column definitions.
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate   # Linux / macOS
+.venv\Scripts\activate      # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Generate synthetic data
+python -c "from src.synthetic_data_generator import generate_all; generate_all()"
+
+# Run the full reconciliation pipeline
+python -c "from src.pipeline import run_pipeline; run_pipeline()"
+
+# Run the test suite
+pytest tests/ -v
+```
+
+**Dependencies:** `pandas>=2.0.0`, `numpy>=1.24.0`, `rapidfuzz>=3.0.0`, `pytest>=7.0.0`
 
 ---
 
-## Matching Methodology
+## Module Descriptions
 
-The matching engine uses a transparent hierarchy. Each level is attempted in order; the first successful match determines the result.
+| Module | Responsibility |
+|---|---|
+| `src/config.py` | Central configuration: `RANDOM_SEED=20260902`, all constants, 28 scenario types, tolerances, 17 statuses |
+| `src/utils.py` | Deterministic IO: `round_money`, `write_csv`, `read_csv`, `file_sha256`, `frame_fingerprint`, `write_json` |
+| `src/normalization.py` | Text/identifier/numeric normalization: Unicode NFKC, EAN-13 validation, unit splitting, fuzzy preparation |
+| `src/synthetic_data_generator.py` | Deterministic data generation: 150 products, 10 branches, 32 employees, 2K+ transactions, 28 scenarios |
+| `src/ingestion.py` | CSV loading with normalized key columns (`_norm_*`, `_*_float`) |
+| `src/schema_validation.py` | Column structure validation for 7 input tables |
+| `src/data_quality.py` | DQ checks: duplicates, malformed IDs, invalid numerics, missing master refs |
+| `src/master_mapping.py` | Product/branch/employee lookup dictionaries (5 product indexes) |
+| `src/matching.py` | 8-level hierarchical matcher with inverted token index |
+| `src/reconciliation.py` | Component status computation (identity/quantity/price/amount) and overall status derivation |
+| `src/exposure.py` | Financial exposure: signed, absolute, qty/price/amount decomposition, unresolved, review |
+| `src/anomaly_detection.py` | 7 rule-based anomaly detectors with 4 severity levels |
+| `src/kpis.py` | KPI framework: 10 summary metrics, by-branch, by-month breakdowns |
+| `src/review_queue.py` | Prioritized review queue: CRITICAL/HIGH/MEDIUM/LOW |
+| `src/reporting.py` | Output file writers (8 CSV + 1 JSON) |
+| `src/pipeline.py` | End-to-end orchestrator: 11-step pipeline |
 
-| Priority | Method | Description |
+---
+
+## Scenario Catalogue
+
+28 controlled scenario types injected with known ground truth:
+
+| # | Scenario Type | Expected Match Method | Expected Reconciliation Status | Review Required |
+|---|---|---|---|---|
+| 1 | `CLEAN_EXACT_MATCH` | EXACT_PRIMARY_ID | MATCHED | N |
+| 2 | `PRIMARY_ID_MATCH` | EXACT_PRIMARY_ID | MATCHED | N |
+| 3 | `BARCODE_MATCH` | EXACT_BARCODE | MATCHED | N |
+| 4 | `PRODUCT_CODE_MATCH` | EXACT_PRODUCT_CODE | MATCHED | N |
+| 5 | `NORMALIZED_NAME_MATCH` | NORMALIZED_NAME | MATCHED | N |
+| 6 | `FUZZY_NAME_MATCH` | FUZZY_NAME | MATCHED | N |
+| 7 | `GENERIC_STRENGTH_EQUIVALENT` | GENERIC_STRENGTH | MATCHED_WITH_SUBSTITUTE | N |
+| 8 | `POSSIBLE_SUBSTITUTE` | POSSIBLE_SUBSTITUTE | MATCHED_WITH_SUBSTITUTE | Y |
+| 9 | `MISSING_IN_SOURCE_A` | UNMATCHED | MISSING_IN_SOURCE_A | Y |
+| 10 | `MISSING_IN_SOURCE_B` | UNMATCHED | MISSING_IN_SOURCE_B | Y |
+| 11 | `ADDITIONAL_TRANSACTION` | UNMATCHED | ADDITIONAL_TRANSACTION | Y |
+| 12 | `ADDITIONAL_ITEM` | UNMATCHED | ADDITIONAL_ITEM | Y |
+| 13 | `QUANTITY_SHORTAGE` | EXACT_PRIMARY_ID | QUANTITY_DIFFERENCE | Y |
+| 14 | `QUANTITY_EXCESS` | EXACT_PRIMARY_ID | QUANTITY_DIFFERENCE | Y |
+| 15 | `PRICE_DIFFERENCE` | EXACT_PRIMARY_ID | PRICE_DIFFERENCE | Y |
+| 16 | `AMOUNT_DIFFERENCE` | EXACT_PRIMARY_ID | AMOUNT_DIFFERENCE | Y |
+| 17 | `QUANTITY_AND_AMOUNT_DIFFERENCE` | EXACT_PRIMARY_ID | QUANTITY_AND_AMOUNT_DIFFERENCE | Y |
+| 18 | `CREDIT` | EXACT_PRIMARY_ID | CREDIT | N |
+| 19 | `REVERSAL` | EXACT_PRIMARY_ID | REVERSAL | N |
+| 20 | `DUPLICATE_TRANSACTION_KEY` | UNMATCHED | DUPLICATE_KEY | Y |
+| 21 | `DUPLICATE_LINE` | UNMATCHED | DUPLICATE_KEY | Y |
+| 22 | `MISSING_MASTER_RECORD` | UNMATCHED | MASTER_DATA_EXCEPTION | Y |
+| 23 | `MALFORMED_IDENTIFIER` | UNMATCHED | DATA_QUALITY_EXCEPTION | Y |
+| 24 | `INVALID_NUMERIC` | UNMATCHED | DATA_QUALITY_EXCEPTION | Y |
+| 25 | `ABNORMAL_REFERENCE_PRICE` | varies | varies | Y |
+| 26 | `HIGH_VALUE_OUTLIER` | varies | varies | Y |
+| 27 | `LOW_CONFIDENCE_FUZZY` | FUZZY_NAME | FUZZY_MATCH_REVIEW | Y |
+| 28 | `UNRESOLVED` | UNMATCHED | UNRESOLVED | Y |
+
+---
+
+## KPI Definitions
+
+| KPI | Description | Formula |
 |---|---|---|
-| 1 | Exact Primary ID | Transaction reference number matches exactly |
-| 2 | Exact Barcode | Product barcode matches exactly |
-| 3 | Exact Product Code | Product master code matches exactly |
-| 4 | Normalized Name | Deterministic name normalization produces identical keys |
-| 5 | Fuzzy Name | Constrained fuzzy string matching above confidence threshold |
-| 6 | Equivalent Product | Same active ingredient / generic strength match |
-| 7 | Possible Substitute | Low-confidence match flagged for review |
-| 8 | Unmatched | No match found — routed to manual review |
-
-Every result preserves: match method, confidence score, supporting evidence, identity status, quantity status, price status, amount status, reconciliation status, and review flag.
-
-See `docs/MATCHING_METHODOLOGY.md` for full details.
-
----
-
-## Reconciliation Logic
-
-Standardized reconciliation statuses:
-
-- `MATCHED` — exact or high-confidence match
-- `MATCHED_WITH_SUBSTITUTE` — equivalent product matched
-- `MISSING_IN_SOURCE_A` — item exists in Source B only
-- `MISSING_IN_SOURCE_B` — item exists in Source A only
-- `ADDITIONAL_TRANSACTION` — entire transaction exists in one source only
-- `ADDITIONAL_ITEM` — individual line item exists in one source only
-- `QUANTITY_DIFFERENCE` — matched item with quantity variance
-- `PRICE_DIFFERENCE` — matched item with price variance
-- `AMOUNT_DIFFERENCE` — matched item with amount variance
-- `QUANTITY_AND_AMOUNT_DIFFERENCE` — combined variance
-- `CREDIT` — credit-only transaction
-- `REVERSAL` — reversal transaction
-- `FUZZY_MATCH_REVIEW` — low-confidence match requiring analyst review
-- `MASTER_DATA_EXCEPTION` — missing or invalid master data
-- `DUPLICATE_KEY` — duplicate transaction detected
-- `DATA_QUALITY_EXCEPTION` — data quality issue prevents matching
-- `UNRESOLVED` — no classification possible
-
-See `docs/RECONCILIATION_RULES.md` for decision logic.
-
----
-
-## Anomaly Detection
-
-Analytical anomaly rules detect unusual patterns:
-
-- Unusually high transaction amount
-- Unusual quantity or unit price
-- Repeated duplicate transactions
-- Excessive manual-review rate by branch or employee
-- Abnormal credit or reversal frequency
-- Repeated quantity or price variance
-- Unusually low match confidence
-- Abnormal unmatched item count
-- Abnormal transaction frequency
-- Anomalous exposure concentration
-
-Anomalies are classified by severity: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
-
-See `docs/ANOMALY_DETECTION.md` for rule definitions and thresholds.
-
----
-
-## Exposure Methodology
-
-Financial exposure is calculated transparently:
-
-| Metric | Formula |
-|---|---|
-| Signed Exposure | Source A amount − Source B amount |
-| Absolute Exposure | \|Signed Exposure\| |
-| Positive Exposure | MAX(Signed Exposure, 0) |
-| Negative Exposure | MIN(Signed Exposure, 0) |
-| Quantity Exposure | Source A qty − Source B qty |
-| Price Exposure | Source A unit price − Source B unit price |
-| Amount Exposure | Source A amount − Source B amount |
-| Total Exception Exposure | SUM(\|Amount Exposure\|) for all exceptions |
-| Unresolved Exposure | SUM(\|Amount Exposure\|) for UNRESOLVED cases |
-| Review Exposure | SUM(\|Amount Exposure\|) for review-required cases |
-
-Exposure is never automatically labeled as fraud or loss. Language used: *exception exposure*, *unreconciled exposure*, *review exposure*, *potential financial discrepancy*.
-
-See `docs/EXPOSURE_METHODOLOGY.md` for full documentation.
-
----
-
-## Data Quality Controls
-
-DQ categories: `ERROR`, `WARNING`, `BUSINESS_ANOMALY`
-
-Validations:
-- Required columns present
-- Null / missing value detection
-- Data type validation
-- Duplicate key detection
-- Invalid quantities, prices, amounts
-- Negative value detection
-- Malformed identifier detection
-- Missing master records
-- Inconsistent totals
-- Inconsistent transaction dates
-- Unexpected categories
-
-See `docs/DATA_QUALITY.md` for full validation rules.
-
----
-
-## KPIs
-
-Key performance indicators include:
-
-- Total transactions / transaction lines
-- Match rate, exact match rate, fuzzy match rate, substitute match rate
-- Unmatched rate, exception rate, manual review rate
-- Duplicate rate
-- Quantity / price / amount variance rates
-- Credit rate, reversal rate
-- Total absolute exposure, signed net exposure, unresolved exposure
-- Exposure per transaction
-- Exception count by branch / employee
-- Exposure concentration
-- Top anomaly categories
-- Match confidence distribution
-- Reconciliation status distribution
-- Trend by month / branch
-
-See `docs/KPI_DICTIONARY.md` for definitions, formulas, and interpretation.
-
----
-
-## Dashboard Overview
-
-The HTML analytical dashboard provides:
-
-1. **Executive Overview** — headline KPIs and status summary
-2. **Reconciliation Performance** — match rates and status distribution
-3. **Matching Quality** — method distribution and confidence scores
-4. **Financial Exposure** — exposure by category and trend
-5. **Exception Analysis** — exception types and top reasons
-6. **Branch Performance** — exceptions and exposure by branch
-7. **Employee Analysis** — exceptions and exposure by employee
-8. **Data Quality** — DQ issue summary and trends
-9. **Anomaly Detection** — anomalies by severity and category
-10. **Manual Review Queue** — pending review cases with context
-
-Dashboard uses only synthetic demo data.
-
----
-
-## SQL Capabilities
-
-SQL scripts demonstrate analytical queries:
-
-- Schema definition
-- Data quality analysis
-- Reconciliation summary
-- Exposure analysis
-- Branch analysis
-- Employee analysis
-- Anomaly analysis
-- Trend analysis
-- Exception queue
-- Validation queries
-
-See `sql/` directory.
-
----
-
-## Python Capabilities
-
-Modular Python implementation:
-
-- `config.py` — configuration and constants
-- `ingestion.py` — data loading and schema validation
-- `schema_validation.py` — column and type validation
-- `normalization.py` — text, numeric, and code normalization
-- `data_quality.py` — DQ checks and reporting
-- `master_mapping.py` — reference master lookup
-- `matching.py` — matching engine
-- `reconciliation.py` — reconciliation classification
-- `exposure.py` — financial exposure calculation
-- `anomaly_detection.py` — analytical anomaly rules
-- `kpis.py` — KPI computation
-- `review_queue.py` — exception queue generation
-- `reporting.py` — output formatting
-- `utils.py` — shared utilities
-
-See `src/` directory.
-
----
-
-## Testing Strategy
-
-Automated tests cover:
-
-- Exact primary-ID matching
-- Barcode and product-code matching
-- Normalized and fuzzy name matching
-- Equivalent product and substitute classification
-- Missing source scenarios (A and B)
-- Additional transaction and item scenarios
-- Quantity, price, and amount variance handling
-- Credit and reversal handling
-- Duplicate-key handling
-- Missing master records
-- Invalid numeric handling
-- Exposure calculation accuracy
-- Confidence threshold behavior
-- Manual-review logic
-- Deterministic synthetic data generation
-- Tolerance boundaries
-- Anomaly severity classification
-- Regression cases
-
-Run tests: `pytest tests/`
-
----
-
-## Power BI Design
-
-Power BI-ready documentation (no PBIX file included):
-
-- Star schema design
-- Dimension and fact table definitions
-- Relationship mapping
-- DAX measure definitions
-- Power Query transformation plan
-- Dashboard layout
-- Validation plan
-
-See `docs/powerbi/` directory.
+| `total_lines` | Total reconciliation line pairs | `COUNT(*)` |
+| `matched_lines` | Lines with MATCHED or MATCHED_WITH_SUBSTITUTE | `COUNT WHERE status ∈ {MATCHED, MATCHED_WITH_SUBSTITUTE}` |
+| `exception_lines` | Lines with exception statuses | `COUNT WHERE status ∈ EXCEPTION_STATUSES` |
+| `match_rate_pct` | Percentage of lines matched | `(matched_lines / total_lines) × 100` |
+| `exception_rate_pct` | Percentage with exceptions | `(exception_lines / total_lines) × 100` |
+| `total_absolute_exposure` | Sum of absolute exposure | `SUM(\|signed_exposure\|)` |
+| `unresolved_exposure` | Exposure from unresolved cases | `SUM(unresolved_exposure)` |
+| `average_confidence` | Mean match confidence | `AVG(confidence_score)` |
+| `review_required_count` | Lines flagged for manual review | `COUNT WHERE review_required = 'Y'` |
+| `review_rate_pct` | Percentage requiring review | `(review_required_count / total_lines) × 100` |
 
 ---
 
@@ -355,130 +242,74 @@ See `docs/powerbi/` directory.
 
 - No real customer, employee, transaction, prescription, company, or proprietary business data is included
 - All names, identifiers, codes, amounts, and dates are fictional
-- The synthetic data generator uses a fixed random seed for full reproducibility
+- The synthetic data generator uses a fixed random seed (`20260902`) for full reproducibility
 - No real company logos, branding, or internal system names are used
-- Generic terminology is used throughout (Source System A, Source System B, POS System, Reference Master)
-
-See `PRIVACY_CHECKLIST.md` for the full privacy validation checklist.
-
----
-
-## Installation
-
-```bash
-# Clone the repository
-git clone <repository-url>
-cd transaction-reconciliation-anomaly-detection-analytics-portfolio
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-.venv\Scripts\activate     # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
----
-
-## Usage
-
-```bash
-# Generate synthetic data
-python src/generate_data.py
-
-# Run reconciliation pipeline
-python src/main.py
-
-# Run tests
-pytest tests/ -v
-
-# Open dashboard
-open dashboard/index.html
-```
+- Generic terminology is used throughout (Source System A, Source System B, POS System, Reference System)
+- Exposure is never labeled as fraud or loss — terms used: *exception exposure*, *unreconciled exposure*, *review exposure*, *potential financial discrepancy*
 
 ---
 
 ## Repository Structure
 
 ```
-├── README.md
-├── LICENSE
-├── .gitignore
-├── .gitattributes
-├── requirements.txt
+├── README.md                           # This file
+├── LICENSE                             # MIT License
+├── requirements.txt                    # Python dependencies
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── PORTFOLIO_NOTES.md
 ├── PRIVACY_CHECKLIST.md
-├── src/                    # Python analytical engine
-├── tests/                  # Automated test suite
-├── sql/                    # SQL analytical queries
-├── data/
-│   └── sample/             # Synthetic sample data
-├── docs/                   # Documentation
+├── src/                                # Python analytical engine
+│   ├── config.py                       # Central configuration
+│   ├── utils.py                        # Deterministic IO helpers
+│   ├── normalization.py               # Text/identifier/numeric normalization
+│   ├── synthetic_data_generator.py    # Deterministic data generation
+│   ├── ingestion.py                   # CSV loading + typed normalization
+│   ├── schema_validation.py           # Column structure validation
+│   ├── data_quality.py               # DQ checks engine
+│   ├── master_mapping.py             # Reference master lookups
+│   ├── matching.py                   # 8-level hierarchical matcher
+│   ├── reconciliation.py             # Component + overall status
+│   ├── exposure.py                   # Financial exposure computation
+│   ├── anomaly_detection.py          # Rule-based anomaly flagging
+│   ├── kpis.py                       # KPI framework
+│   ├── review_queue.py              # Prioritized review queue
+│   ├── reporting.py                  # Output file writers
+│   └── pipeline.py                  # End-to-end orchestrator
+├── tests/                             # Automated test suite
+│   ├── conftest.py
+│   ├── test_config.py
+│   ├── test_utils.py
+│   ├── test_normalization.py
+│   ├── test_synthetic_data.py
+│   ├── test_data_quality.py
+│   ├── test_matching.py
+│   ├── test_reconciliation.py
+│   └── test_pipeline.py
+├── data/sample/                       # Synthetic sample data (generated)
+├── docs/                              # Documentation
 │   ├── ARCHITECTURE.md
 │   ├── DATA_DICTIONARY.md
-│   ├── KPI_DICTIONARY.md
 │   ├── MATCHING_METHODOLOGY.md
 │   ├── RECONCILIATION_RULES.md
 │   ├── EXPOSURE_METHODOLOGY.md
 │   ├── ANOMALY_DETECTION.md
 │   ├── DATA_QUALITY.md
-│   ├── TEST_CASES.md
+│   ├── KPI_DICTIONARY.md
 │   ├── BUSINESS_REQUIREMENTS.md
+│   ├── TEST_CASES.md
 │   └── powerbi/
-├── dashboard/              # HTML analytical dashboard
-└── outputs/
-    └── examples/           # Example output files
+├── sql/                               # SQL analytical queries
+├── dashboard/                         # HTML analytical dashboard
+└── outputs/examples/                  # Example output files (generated)
 ```
-
----
-
-## Limitations
-
-- Synthetic data does not capture all real-world edge cases
-- Fuzzy matching thresholds are tuned for demonstration data; real deployments require calibration
-- SQL scripts use portable syntax but may require dialect-specific adjustments
-- Dashboard uses static synthetic data; production dashboards would connect to live data sources
-- Anomaly detection rules are heuristic; real deployments require statistical validation
-
----
-
-## Future Enhancements
-
-- Multi-source reconciliation (3+ source systems)
-- Time-series anomaly detection with statistical models
-- Machine learning-based match confidence scoring
-- Interactive dashboard with filtering and drill-down
-- Automated report generation (PDF / Excel)
-- CI/CD pipeline with automated testing
-- Power BI .pbix implementation
-- API layer for integration with external systems
-
----
-
-## Skills Demonstrated
-
-- Data reconciliation and matching algorithms
-- Data quality engineering
-- Anomaly detection
-- Financial exposure analysis
-- SQL analytics
-- Python (pandas, numpy, rapidfuzz, pytest)
-- HTML / CSS / JavaScript dashboard
-- Power BI data modeling and DAX
-- Automated testing
-- Technical documentation
-- Privacy-by-design
-- Git / GitHub engineering discipline
 
 ---
 
 ## License
 
-MIT License. See `LICENSE` file.
+MIT License. See [LICENSE](LICENSE) file.
 
 ---
 

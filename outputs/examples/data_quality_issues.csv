@@ -1,0 +1,771 @@
+table,field,issue_type,severity,description,record_key
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002001,TXN-A-002001
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002001,TXN-A-002001
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002002,TXN-A-002002
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002002,TXN-A-002002
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002003,TXN-A-002003
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002003,TXN-A-002003
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002004,TXN-A-002004
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002004,TXN-A-002004
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002005,TXN-A-002005
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002005,TXN-A-002005
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002006,TXN-A-002006
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002006,TXN-A-002006
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002007,TXN-A-002007
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002007,TXN-A-002007
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002008,TXN-A-002008
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002008,TXN-A-002008
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002009,TXN-A-002009
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002009,TXN-A-002009
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002010,TXN-A-002010
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002010,TXN-A-002010
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002011,TXN-A-002011
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002011,TXN-A-002011
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002012,TXN-A-002012
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002012,TXN-A-002012
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002013,TXN-A-002013
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002013,TXN-A-002013
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002014,TXN-A-002014
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002014,TXN-A-002014
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002015,TXN-A-002015
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002015,TXN-A-002015
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002016,TXN-A-002016
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002016,TXN-A-002016
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002017,TXN-A-002017
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002017,TXN-A-002017
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002018,TXN-A-002018
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002018,TXN-A-002018
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002019,TXN-A-002019
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002019,TXN-A-002019
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002020,TXN-A-002020
+source_a_headers,transaction_id,DUPLICATE_KEY,ERROR,Duplicate transaction_id value: TXN-A-002020,TXN-A-002020
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002021-L01,TXN-A-002021-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002021-L01,TXN-A-002021-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002022-L01,TXN-A-002022-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002022-L01,TXN-A-002022-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002023-L01,TXN-A-002023-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002023-L01,TXN-A-002023-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002024-L01,TXN-A-002024-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002024-L01,TXN-A-002024-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002025-L01,TXN-A-002025-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002025-L01,TXN-A-002025-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002026-L01,TXN-A-002026-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002026-L01,TXN-A-002026-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002027-L01,TXN-A-002027-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002027-L01,TXN-A-002027-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002028-L01,TXN-A-002028-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002028-L01,TXN-A-002028-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002029-L01,TXN-A-002029-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002029-L01,TXN-A-002029-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002030-L01,TXN-A-002030-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002030-L01,TXN-A-002030-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002031-L01,TXN-A-002031-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002031-L01,TXN-A-002031-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002032-L01,TXN-A-002032-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002032-L01,TXN-A-002032-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002033-L01,TXN-A-002033-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002033-L01,TXN-A-002033-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002034-L01,TXN-A-002034-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002034-L01,TXN-A-002034-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002035-L01,TXN-A-002035-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002035-L01,TXN-A-002035-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002036-L01,TXN-A-002036-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002036-L01,TXN-A-002036-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002037-L01,TXN-A-002037-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002037-L01,TXN-A-002037-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002038-L01,TXN-A-002038-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002038-L01,TXN-A-002038-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002039-L01,TXN-A-002039-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002039-L01,TXN-A-002039-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002040-L01,TXN-A-002040-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002040-L01,TXN-A-002040-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002041-L01,TXN-A-002041-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002041-L01,TXN-A-002041-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002042-L01,TXN-A-002042-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002042-L01,TXN-A-002042-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002043-L01,TXN-A-002043-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002043-L01,TXN-A-002043-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002044-L01,TXN-A-002044-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002044-L01,TXN-A-002044-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002045-L01,TXN-A-002045-L01
+source_a_lines,line_id,DUPLICATE_KEY,ERROR,Duplicate line_id value: TXN-A-002045-L01,TXN-A-002045-L01
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!94#' is not well formed,PRD!94#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!16#' is not well formed,PRD!16#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!05#' is not well formed,PRD!05#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!64#' is not well formed,PRD!64#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!96#' is not well formed,PRD!96#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!68#' is not well formed,PRD!68#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!12#' is not well formed,PRD!12#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!92#' is not well formed,PRD!92#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!82#' is not well formed,PRD!82#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!51#' is not well formed,PRD!51#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!79#' is not well formed,PRD!79#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!70#' is not well formed,PRD!70#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!37#' is not well formed,PRD!37#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!31#' is not well formed,PRD!31#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!03#' is not well formed,PRD!03#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!37#' is not well formed,PRD!37#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!87#' is not well formed,PRD!87#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!87#' is not well formed,PRD!87#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!94#' is not well formed,PRD!94#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!39#' is not well formed,PRD!39#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!27#' is not well formed,PRD!27#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!03#' is not well formed,PRD!03#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!68#' is not well formed,PRD!68#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!37#' is not well formed,PRD!37#
+source_a_lines,product_id,MALFORMED_IDENTIFIER,ERROR,Identifier 'PRD!49#' is not well formed,PRD!49#
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,quantity,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in quantity,N/A
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,unit_price,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in unit_price,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'N/A' in amount,N/A
+source_a_lines,amount,INVALID_NUMERIC,ERROR,Non-numeric value 'ERR' in amount,ERR
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7013' not found in master data,PRD-ORPH7013
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7366' not found in master data,PRD-ORPH7366
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH6989' not found in master data,PRD-ORPH6989
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH5315' not found in master data,PRD-ORPH5315
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH3521' not found in master data,PRD-ORPH3521
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7129' not found in master data,PRD-ORPH7129
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH6319' not found in master data,PRD-ORPH6319
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH4212' not found in master data,PRD-ORPH4212
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH3090' not found in master data,PRD-ORPH3090
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH4711' not found in master data,PRD-ORPH4711
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7953' not found in master data,PRD-ORPH7953
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH6574' not found in master data,PRD-ORPH6574
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7242' not found in master data,PRD-ORPH7242
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH3618' not found in master data,PRD-ORPH3618
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH1902' not found in master data,PRD-ORPH1902
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH1096' not found in master data,PRD-ORPH1096
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH2055' not found in master data,PRD-ORPH2055
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH6081' not found in master data,PRD-ORPH6081
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH8357' not found in master data,PRD-ORPH8357
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH4328' not found in master data,PRD-ORPH4328
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH8787' not found in master data,PRD-ORPH8787
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH9535' not found in master data,PRD-ORPH9535
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH1092' not found in master data,PRD-ORPH1092
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH3067' not found in master data,PRD-ORPH3067
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH5488' not found in master data,PRD-ORPH5488
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH7021' not found in master data,PRD-ORPH7021
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH5410' not found in master data,PRD-ORPH5410
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH8230' not found in master data,PRD-ORPH8230
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH5321' not found in master data,PRD-ORPH5321
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-ORPH5342' not found in master data,PRD-ORPH5342
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!94#' not found in master data,PRD!94#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!16#' not found in master data,PRD!16#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!05#' not found in master data,PRD!05#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!64#' not found in master data,PRD!64#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!96#' not found in master data,PRD!96#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!68#' not found in master data,PRD!68#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!12#' not found in master data,PRD!12#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!92#' not found in master data,PRD!92#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!82#' not found in master data,PRD!82#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!51#' not found in master data,PRD!51#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!79#' not found in master data,PRD!79#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!70#' not found in master data,PRD!70#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!37#' not found in master data,PRD!37#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!31#' not found in master data,PRD!31#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!03#' not found in master data,PRD!03#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!37#' not found in master data,PRD!37#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!87#' not found in master data,PRD!87#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!87#' not found in master data,PRD!87#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!94#' not found in master data,PRD!94#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!39#' not found in master data,PRD!39#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!27#' not found in master data,PRD!27#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!03#' not found in master data,PRD!03#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!68#' not found in master data,PRD!68#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!37#' not found in master data,PRD!37#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD!49#' not found in master data,PRD!49#
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9555' not found in master data,PRD-UNR9555
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6780' not found in master data,PRD-UNR6780
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR8974' not found in master data,PRD-UNR8974
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9956' not found in master data,PRD-UNR9956
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR5300' not found in master data,PRD-UNR5300
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR8478' not found in master data,PRD-UNR8478
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR7833' not found in master data,PRD-UNR7833
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR7791' not found in master data,PRD-UNR7791
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6448' not found in master data,PRD-UNR6448
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9285' not found in master data,PRD-UNR9285
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9773' not found in master data,PRD-UNR9773
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9739' not found in master data,PRD-UNR9739
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR5256' not found in master data,PRD-UNR5256
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6745' not found in master data,PRD-UNR6745
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6633' not found in master data,PRD-UNR6633
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR3192' not found in master data,PRD-UNR3192
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6436' not found in master data,PRD-UNR6436
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6759' not found in master data,PRD-UNR6759
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR4428' not found in master data,PRD-UNR4428
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR9862' not found in master data,PRD-UNR9862
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR7533' not found in master data,PRD-UNR7533
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6545' not found in master data,PRD-UNR6545
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR6792' not found in master data,PRD-UNR6792
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR2686' not found in master data,PRD-UNR2686
+source_a_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-UNR5343' not found in master data,PRD-UNR5343
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9852' not found in master data,PRD-9852
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9937' not found in master data,PRD-9937
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9647' not found in master data,PRD-9647
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9267' not found in master data,PRD-9267
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9566' not found in master data,PRD-9566
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9112' not found in master data,PRD-9112
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9423' not found in master data,PRD-9423
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9392' not found in master data,PRD-9392
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9675' not found in master data,PRD-9675
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9927' not found in master data,PRD-9927
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9580' not found in master data,PRD-9580
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9179' not found in master data,PRD-9179
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9544' not found in master data,PRD-9544
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9138' not found in master data,PRD-9138
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9053' not found in master data,PRD-9053
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9135' not found in master data,PRD-9135
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9939' not found in master data,PRD-9939
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9143' not found in master data,PRD-9143
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9866' not found in master data,PRD-9866
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9678' not found in master data,PRD-9678
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9783' not found in master data,PRD-9783
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9750' not found in master data,PRD-9750
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9959' not found in master data,PRD-9959
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9773' not found in master data,PRD-9773
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9356' not found in master data,PRD-9356
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9400' not found in master data,PRD-9400
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9250' not found in master data,PRD-9250
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9895' not found in master data,PRD-9895
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9047' not found in master data,PRD-9047
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9146' not found in master data,PRD-9146
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9085' not found in master data,PRD-9085
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9337' not found in master data,PRD-9337
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9493' not found in master data,PRD-9493
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9235' not found in master data,PRD-9235
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9162' not found in master data,PRD-9162
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9330' not found in master data,PRD-9330
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9995' not found in master data,PRD-9995
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9938' not found in master data,PRD-9938
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9727' not found in master data,PRD-9727
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9475' not found in master data,PRD-9475
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9992' not found in master data,PRD-9992
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9106' not found in master data,PRD-9106
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9180' not found in master data,PRD-9180
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9280' not found in master data,PRD-9280
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9494' not found in master data,PRD-9494
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9059' not found in master data,PRD-9059
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9820' not found in master data,PRD-9820
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9606' not found in master data,PRD-9606
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9545' not found in master data,PRD-9545
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9869' not found in master data,PRD-9869
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9416' not found in master data,PRD-9416
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9105' not found in master data,PRD-9105
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9803' not found in master data,PRD-9803
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9357' not found in master data,PRD-9357
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9524' not found in master data,PRD-9524
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9460' not found in master data,PRD-9460
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9323' not found in master data,PRD-9323
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9821' not found in master data,PRD-9821
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9721' not found in master data,PRD-9721
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9180' not found in master data,PRD-9180
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9202' not found in master data,PRD-9202
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9401' not found in master data,PRD-9401
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9314' not found in master data,PRD-9314
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9186' not found in master data,PRD-9186
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9077' not found in master data,PRD-9077
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9511' not found in master data,PRD-9511
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9977' not found in master data,PRD-9977
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9368' not found in master data,PRD-9368
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9452' not found in master data,PRD-9452
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9124' not found in master data,PRD-9124
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9041' not found in master data,PRD-9041
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9398' not found in master data,PRD-9398
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9932' not found in master data,PRD-9932
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9042' not found in master data,PRD-9042
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9357' not found in master data,PRD-9357
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9592' not found in master data,PRD-9592
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9577' not found in master data,PRD-9577
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9199' not found in master data,PRD-9199
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9695' not found in master data,PRD-9695
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9393' not found in master data,PRD-9393
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9559' not found in master data,PRD-9559
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9856' not found in master data,PRD-9856
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9295' not found in master data,PRD-9295
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9323' not found in master data,PRD-9323
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9934' not found in master data,PRD-9934
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9332' not found in master data,PRD-9332
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9287' not found in master data,PRD-9287
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9709' not found in master data,PRD-9709
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9489' not found in master data,PRD-9489
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9208' not found in master data,PRD-9208
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9364' not found in master data,PRD-9364
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9029' not found in master data,PRD-9029
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9909' not found in master data,PRD-9909
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9054' not found in master data,PRD-9054
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9062' not found in master data,PRD-9062
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9221' not found in master data,PRD-9221
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9866' not found in master data,PRD-9866
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9058' not found in master data,PRD-9058
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9967' not found in master data,PRD-9967
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9293' not found in master data,PRD-9293
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9011' not found in master data,PRD-9011
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9495' not found in master data,PRD-9495
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9529' not found in master data,PRD-9529
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9884' not found in master data,PRD-9884
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9129' not found in master data,PRD-9129
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9595' not found in master data,PRD-9595
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9059' not found in master data,PRD-9059
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9977' not found in master data,PRD-9977
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9835' not found in master data,PRD-9835
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-9039' not found in master data,PRD-9039
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8988' not found in master data,PRD-8988
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8365' not found in master data,PRD-8365
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8765' not found in master data,PRD-8765
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8801' not found in master data,PRD-8801
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8370' not found in master data,PRD-8370
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8980' not found in master data,PRD-8980
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8349' not found in master data,PRD-8349
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8085' not found in master data,PRD-8085
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8943' not found in master data,PRD-8943
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8136' not found in master data,PRD-8136
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8353' not found in master data,PRD-8353
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8344' not found in master data,PRD-8344
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8376' not found in master data,PRD-8376
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8519' not found in master data,PRD-8519
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8829' not found in master data,PRD-8829
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8192' not found in master data,PRD-8192
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8514' not found in master data,PRD-8514
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8173' not found in master data,PRD-8173
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8669' not found in master data,PRD-8669
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8245' not found in master data,PRD-8245
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8443' not found in master data,PRD-8443
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8534' not found in master data,PRD-8534
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8518' not found in master data,PRD-8518
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8333' not found in master data,PRD-8333
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8282' not found in master data,PRD-8282
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8300' not found in master data,PRD-8300
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8727' not found in master data,PRD-8727
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8575' not found in master data,PRD-8575
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8456' not found in master data,PRD-8456
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8201' not found in master data,PRD-8201
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8225' not found in master data,PRD-8225
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8045' not found in master data,PRD-8045
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8629' not found in master data,PRD-8629
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8853' not found in master data,PRD-8853
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8514' not found in master data,PRD-8514
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8291' not found in master data,PRD-8291
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8681' not found in master data,PRD-8681
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8963' not found in master data,PRD-8963
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8401' not found in master data,PRD-8401
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8479' not found in master data,PRD-8479
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8016' not found in master data,PRD-8016
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8425' not found in master data,PRD-8425
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8044' not found in master data,PRD-8044
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8360' not found in master data,PRD-8360
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8102' not found in master data,PRD-8102
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8664' not found in master data,PRD-8664
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8851' not found in master data,PRD-8851
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8327' not found in master data,PRD-8327
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8293' not found in master data,PRD-8293
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8326' not found in master data,PRD-8326
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8335' not found in master data,PRD-8335
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8248' not found in master data,PRD-8248
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8733' not found in master data,PRD-8733
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8969' not found in master data,PRD-8969
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8564' not found in master data,PRD-8564
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8538' not found in master data,PRD-8538
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8368' not found in master data,PRD-8368
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8860' not found in master data,PRD-8860
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8166' not found in master data,PRD-8166
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8564' not found in master data,PRD-8564
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8546' not found in master data,PRD-8546
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8091' not found in master data,PRD-8091
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8181' not found in master data,PRD-8181
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8446' not found in master data,PRD-8446
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8302' not found in master data,PRD-8302
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8415' not found in master data,PRD-8415
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8098' not found in master data,PRD-8098
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8712' not found in master data,PRD-8712
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8269' not found in master data,PRD-8269
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8081' not found in master data,PRD-8081
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8731' not found in master data,PRD-8731
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8080' not found in master data,PRD-8080
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8137' not found in master data,PRD-8137
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8156' not found in master data,PRD-8156
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8584' not found in master data,PRD-8584
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8627' not found in master data,PRD-8627
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8115' not found in master data,PRD-8115
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8934' not found in master data,PRD-8934
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8720' not found in master data,PRD-8720
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8800' not found in master data,PRD-8800
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8665' not found in master data,PRD-8665
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8461' not found in master data,PRD-8461
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8802' not found in master data,PRD-8802
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8390' not found in master data,PRD-8390
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8454' not found in master data,PRD-8454
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8146' not found in master data,PRD-8146
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8993' not found in master data,PRD-8993
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8743' not found in master data,PRD-8743
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8626' not found in master data,PRD-8626
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8784' not found in master data,PRD-8784
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8946' not found in master data,PRD-8946
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8634' not found in master data,PRD-8634
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8384' not found in master data,PRD-8384
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8630' not found in master data,PRD-8630
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8975' not found in master data,PRD-8975
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8753' not found in master data,PRD-8753
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8027' not found in master data,PRD-8027
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8848' not found in master data,PRD-8848
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8760' not found in master data,PRD-8760
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8872' not found in master data,PRD-8872
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8298' not found in master data,PRD-8298
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8014' not found in master data,PRD-8014
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8885' not found in master data,PRD-8885
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8977' not found in master data,PRD-8977
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8977' not found in master data,PRD-8977
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8765' not found in master data,PRD-8765
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8781' not found in master data,PRD-8781
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8458' not found in master data,PRD-8458
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8233' not found in master data,PRD-8233
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-8839' not found in master data,PRD-8839
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7423' not found in master data,PRD-7423
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7416' not found in master data,PRD-7416
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7817' not found in master data,PRD-7817
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7680' not found in master data,PRD-7680
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7383' not found in master data,PRD-7383
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7366' not found in master data,PRD-7366
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7771' not found in master data,PRD-7771
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7551' not found in master data,PRD-7551
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7699' not found in master data,PRD-7699
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7268' not found in master data,PRD-7268
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7383' not found in master data,PRD-7383
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7805' not found in master data,PRD-7805
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7664' not found in master data,PRD-7664
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7957' not found in master data,PRD-7957
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7873' not found in master data,PRD-7873
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7281' not found in master data,PRD-7281
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7163' not found in master data,PRD-7163
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7594' not found in master data,PRD-7594
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7520' not found in master data,PRD-7520
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7336' not found in master data,PRD-7336
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7578' not found in master data,PRD-7578
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7212' not found in master data,PRD-7212
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7477' not found in master data,PRD-7477
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7508' not found in master data,PRD-7508
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7905' not found in master data,PRD-7905
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7845' not found in master data,PRD-7845
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7657' not found in master data,PRD-7657
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7980' not found in master data,PRD-7980
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7094' not found in master data,PRD-7094
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7752' not found in master data,PRD-7752
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7754' not found in master data,PRD-7754
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7903' not found in master data,PRD-7903
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7379' not found in master data,PRD-7379
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7287' not found in master data,PRD-7287
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7571' not found in master data,PRD-7571
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7748' not found in master data,PRD-7748
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7467' not found in master data,PRD-7467
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7428' not found in master data,PRD-7428
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7111' not found in master data,PRD-7111
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7747' not found in master data,PRD-7747
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7291' not found in master data,PRD-7291
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7078' not found in master data,PRD-7078
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7838' not found in master data,PRD-7838
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7597' not found in master data,PRD-7597
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7770' not found in master data,PRD-7770
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7790' not found in master data,PRD-7790
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7839' not found in master data,PRD-7839
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7216' not found in master data,PRD-7216
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7944' not found in master data,PRD-7944
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7430' not found in master data,PRD-7430
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7413' not found in master data,PRD-7413
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7787' not found in master data,PRD-7787
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7129' not found in master data,PRD-7129
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7986' not found in master data,PRD-7986
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7741' not found in master data,PRD-7741
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7993' not found in master data,PRD-7993
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7242' not found in master data,PRD-7242
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7881' not found in master data,PRD-7881
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7664' not found in master data,PRD-7664
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7866' not found in master data,PRD-7866
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7267' not found in master data,PRD-7267
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7963' not found in master data,PRD-7963
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7134' not found in master data,PRD-7134
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7442' not found in master data,PRD-7442
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7954' not found in master data,PRD-7954
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7518' not found in master data,PRD-7518
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7471' not found in master data,PRD-7471
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7202' not found in master data,PRD-7202
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7541' not found in master data,PRD-7541
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7383' not found in master data,PRD-7383
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7412' not found in master data,PRD-7412
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7965' not found in master data,PRD-7965
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7774' not found in master data,PRD-7774
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7255' not found in master data,PRD-7255
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7526' not found in master data,PRD-7526
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7565' not found in master data,PRD-7565
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7885' not found in master data,PRD-7885
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7142' not found in master data,PRD-7142
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7702' not found in master data,PRD-7702
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7555' not found in master data,PRD-7555
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7756' not found in master data,PRD-7756
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7652' not found in master data,PRD-7652
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7043' not found in master data,PRD-7043
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7592' not found in master data,PRD-7592
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7051' not found in master data,PRD-7051
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7127' not found in master data,PRD-7127
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7183' not found in master data,PRD-7183
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7483' not found in master data,PRD-7483
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7287' not found in master data,PRD-7287
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-7564' not found in master data,PRD-7564
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6150' not found in master data,PRD-6150
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6603' not found in master data,PRD-6603
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6468' not found in master data,PRD-6468
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6305' not found in master data,PRD-6305
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6941' not found in master data,PRD-6941
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6852' not found in master data,PRD-6852
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6230' not found in master data,PRD-6230
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6439' not found in master data,PRD-6439
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6426' not found in master data,PRD-6426
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6947' not found in master data,PRD-6947
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6966' not found in master data,PRD-6966
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6753' not found in master data,PRD-6753
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6853' not found in master data,PRD-6853
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6609' not found in master data,PRD-6609
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6541' not found in master data,PRD-6541
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6597' not found in master data,PRD-6597
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6105' not found in master data,PRD-6105
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6470' not found in master data,PRD-6470
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6187' not found in master data,PRD-6187
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6812' not found in master data,PRD-6812
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6396' not found in master data,PRD-6396
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6678' not found in master data,PRD-6678
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6223' not found in master data,PRD-6223
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6008' not found in master data,PRD-6008
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6509' not found in master data,PRD-6509
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6553' not found in master data,PRD-6553
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6501' not found in master data,PRD-6501
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6214' not found in master data,PRD-6214
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6496' not found in master data,PRD-6496
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6702' not found in master data,PRD-6702
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6357' not found in master data,PRD-6357
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6246' not found in master data,PRD-6246
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6249' not found in master data,PRD-6249
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6083' not found in master data,PRD-6083
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6148' not found in master data,PRD-6148
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6845' not found in master data,PRD-6845
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6313' not found in master data,PRD-6313
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6338' not found in master data,PRD-6338
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6753' not found in master data,PRD-6753
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6003' not found in master data,PRD-6003
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6892' not found in master data,PRD-6892
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6152' not found in master data,PRD-6152
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6102' not found in master data,PRD-6102
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6052' not found in master data,PRD-6052
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6425' not found in master data,PRD-6425
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6713' not found in master data,PRD-6713
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6172' not found in master data,PRD-6172
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6509' not found in master data,PRD-6509
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6699' not found in master data,PRD-6699
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6594' not found in master data,PRD-6594
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6910' not found in master data,PRD-6910
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6510' not found in master data,PRD-6510
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6913' not found in master data,PRD-6913
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6721' not found in master data,PRD-6721
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6462' not found in master data,PRD-6462
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6726' not found in master data,PRD-6726
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6412' not found in master data,PRD-6412
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6658' not found in master data,PRD-6658
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6956' not found in master data,PRD-6956
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6864' not found in master data,PRD-6864
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6287' not found in master data,PRD-6287
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6983' not found in master data,PRD-6983
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6125' not found in master data,PRD-6125
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6114' not found in master data,PRD-6114
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6211' not found in master data,PRD-6211
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6506' not found in master data,PRD-6506
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6306' not found in master data,PRD-6306
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6974' not found in master data,PRD-6974
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6148' not found in master data,PRD-6148
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-6130' not found in master data,PRD-6130
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5677' not found in master data,PRD-5677
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5298' not found in master data,PRD-5298
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5675' not found in master data,PRD-5675
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5141' not found in master data,PRD-5141
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5229' not found in master data,PRD-5229
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5853' not found in master data,PRD-5853
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5371' not found in master data,PRD-5371
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5067' not found in master data,PRD-5067
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5872' not found in master data,PRD-5872
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5425' not found in master data,PRD-5425
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5670' not found in master data,PRD-5670
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5235' not found in master data,PRD-5235
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5385' not found in master data,PRD-5385
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5563' not found in master data,PRD-5563
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5451' not found in master data,PRD-5451
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5306' not found in master data,PRD-5306
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5926' not found in master data,PRD-5926
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5864' not found in master data,PRD-5864
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5901' not found in master data,PRD-5901
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5091' not found in master data,PRD-5091
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5242' not found in master data,PRD-5242
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5541' not found in master data,PRD-5541
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5459' not found in master data,PRD-5459
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5755' not found in master data,PRD-5755
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5311' not found in master data,PRD-5311
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5652' not found in master data,PRD-5652
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5211' not found in master data,PRD-5211
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5996' not found in master data,PRD-5996
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5424' not found in master data,PRD-5424
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5405' not found in master data,PRD-5405
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5517' not found in master data,PRD-5517
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5308' not found in master data,PRD-5308
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5685' not found in master data,PRD-5685
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5605' not found in master data,PRD-5605
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5553' not found in master data,PRD-5553
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5537' not found in master data,PRD-5537
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5828' not found in master data,PRD-5828
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5644' not found in master data,PRD-5644
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5067' not found in master data,PRD-5067
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5261' not found in master data,PRD-5261
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5045' not found in master data,PRD-5045
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5095' not found in master data,PRD-5095
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5261' not found in master data,PRD-5261
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5677' not found in master data,PRD-5677
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5063' not found in master data,PRD-5063
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5166' not found in master data,PRD-5166
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5831' not found in master data,PRD-5831
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5949' not found in master data,PRD-5949
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5625' not found in master data,PRD-5625
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5665' not found in master data,PRD-5665
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5790' not found in master data,PRD-5790
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5812' not found in master data,PRD-5812
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5834' not found in master data,PRD-5834
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5035' not found in master data,PRD-5035
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5087' not found in master data,PRD-5087
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5379' not found in master data,PRD-5379
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5661' not found in master data,PRD-5661
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5560' not found in master data,PRD-5560
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5143' not found in master data,PRD-5143
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5892' not found in master data,PRD-5892
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5918' not found in master data,PRD-5918
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5020' not found in master data,PRD-5020
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5826' not found in master data,PRD-5826
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5247' not found in master data,PRD-5247
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5903' not found in master data,PRD-5903
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5835' not found in master data,PRD-5835
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5957' not found in master data,PRD-5957
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5950' not found in master data,PRD-5950
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5582' not found in master data,PRD-5582
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-5479' not found in master data,PRD-5479
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4426' not found in master data,PRD-4426
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4264' not found in master data,PRD-4264
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4882' not found in master data,PRD-4882
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4484' not found in master data,PRD-4484
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4768' not found in master data,PRD-4768
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4158' not found in master data,PRD-4158
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4402' not found in master data,PRD-4402
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4409' not found in master data,PRD-4409
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4366' not found in master data,PRD-4366
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4246' not found in master data,PRD-4246
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4953' not found in master data,PRD-4953
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4293' not found in master data,PRD-4293
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4382' not found in master data,PRD-4382
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4701' not found in master data,PRD-4701
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4195' not found in master data,PRD-4195
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4129' not found in master data,PRD-4129
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4496' not found in master data,PRD-4496
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4143' not found in master data,PRD-4143
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4228' not found in master data,PRD-4228
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4279' not found in master data,PRD-4279
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4441' not found in master data,PRD-4441
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4054' not found in master data,PRD-4054
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4011' not found in master data,PRD-4011
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4235' not found in master data,PRD-4235
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4973' not found in master data,PRD-4973
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4546' not found in master data,PRD-4546
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4304' not found in master data,PRD-4304
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4501' not found in master data,PRD-4501
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4335' not found in master data,PRD-4335
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4868' not found in master data,PRD-4868
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4623' not found in master data,PRD-4623
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4304' not found in master data,PRD-4304
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4319' not found in master data,PRD-4319
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4887' not found in master data,PRD-4887
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4794' not found in master data,PRD-4794
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4234' not found in master data,PRD-4234
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4506' not found in master data,PRD-4506
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4427' not found in master data,PRD-4427
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4829' not found in master data,PRD-4829
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4871' not found in master data,PRD-4871
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4592' not found in master data,PRD-4592
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4023' not found in master data,PRD-4023
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4842' not found in master data,PRD-4842
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4574' not found in master data,PRD-4574
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-4902' not found in master data,PRD-4902
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3907' not found in master data,PRD-3907
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3020' not found in master data,PRD-3020
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3816' not found in master data,PRD-3816
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3954' not found in master data,PRD-3954
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3095' not found in master data,PRD-3095
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3134' not found in master data,PRD-3134
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3344' not found in master data,PRD-3344
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3106' not found in master data,PRD-3106
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3886' not found in master data,PRD-3886
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3302' not found in master data,PRD-3302
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3209' not found in master data,PRD-3209
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3723' not found in master data,PRD-3723
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3860' not found in master data,PRD-3860
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3267' not found in master data,PRD-3267
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3267' not found in master data,PRD-3267
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3437' not found in master data,PRD-3437
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3051' not found in master data,PRD-3051
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3043' not found in master data,PRD-3043
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3354' not found in master data,PRD-3354
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3332' not found in master data,PRD-3332
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3927' not found in master data,PRD-3927
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3793' not found in master data,PRD-3793
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3810' not found in master data,PRD-3810
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3221' not found in master data,PRD-3221
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3709' not found in master data,PRD-3709
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3880' not found in master data,PRD-3880
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3063' not found in master data,PRD-3063
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3298' not found in master data,PRD-3298
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3190' not found in master data,PRD-3190
+source_b_lines,product_id,MISSING_MASTER_RECORD,BUSINESS_ANOMALY,Product 'PRD-3709' not found in master data,PRD-3709

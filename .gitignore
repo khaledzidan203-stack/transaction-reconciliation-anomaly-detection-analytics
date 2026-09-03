@@ -82,6 +82,8 @@ yarn-error.log*
 
 # ============================================================
 # ALLOW synthetic sample data under data/sample/
+# AND pipeline example outputs under outputs/examples/
 # ============================================================
-# Re-allow CSV files that are intentionally placed as synthetic samples
 !data/sample/*.csv
+!outputs/examples/*.csv
+!outputs/examples/*.json

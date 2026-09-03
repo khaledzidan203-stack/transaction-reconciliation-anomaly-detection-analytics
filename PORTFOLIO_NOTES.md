@@ -2,15 +2,35 @@
 
 ## Purpose
 
-This project is a **portfolio demonstration** designed to showcase analytical and engineering skills for roles in:
+This project is a **portfolio demonstration** of end-to-end transaction
+reconciliation and anomaly detection analytics.
 
-- Data Analyst
-- Business Analyst
-- Fraud Analyst
-- Financial Analyst
-- Operations Analyst
-- BI Analyst
-- Analytics Engineer
+## Key Design Choices
+
+1. **Generic retail/distribution domain** — The project deliberately uses a
+   generic retail domain with fictional brand names (ZENITH, AURORA, NEXUS,
+   etc.) to create a clean separation from any specific industry or employer.
+
+2. **Privacy-by-design** — No real company names, employee names, proprietary
+   identifiers, or business logic from any employer appear anywhere in this
+   repository. All data is synthetically generated with a fixed random seed.
+
+3. **Deterministic reproducibility** — Every data file, pipeline output and
+   test result is fully reproducible via `RANDOM_SEED = 20260902`. Running
+   the generator twice produces byte-identical CSV files.
+
+4. **28 controlled injection scenarios** — The synthetic data includes
+   deliberately injected reconciliation scenarios (clean matches, missing
+   transactions, quantity/price variances, fuzzy matches, data quality
+   failures, etc.) with known ground truth for validation.
+
+5. **Explainable matching** — Every matched pair includes the match method
+   used and a confidence score, enabling full audit trails and review
+   prioritization.
+
+6. **Component status architecture** — Reconciliation statuses are derived
+   from independent identity/quantity/price/amount component statuses,
+   providing granular discrepancy analysis.
 
 ## What This Project Demonstrates
 
@@ -27,14 +47,7 @@ This project is a **portfolio demonstration** designed to showcase analytical an
 - **HTML/CSS/JS** — analytical dashboard with charts
 - **Power BI** — star schema, DAX, Power Query documentation
 - **Testing** — comprehensive automated test suite
-- **Git** — clean commit history, branching, documentation
-
-### Engineering Discipline
-- Modular, maintainable code structure
-- Deterministic synthetic data generation
-- Privacy-by-design architecture
-- Comprehensive documentation
-- Reproducible results with fixed random seed
+- **Git** — clean commit history, documentation
 
 ## What This Project Does NOT Claim
 
@@ -42,14 +55,18 @@ This project is a **portfolio demonstration** designed to showcase analytical an
 - No real company losses were identified
 - No real transactions were analyzed
 - No real employees were investigated
-- No real prescriptions or patient data were processed
 
-## Target Audience
+## Technology Stack
 
-- Hiring managers reviewing analytical portfolios
-- Technical interviewers assessing data engineering skills
-- Peers interested in reconciliation methodology
-- Students learning analytical pipeline design
+| Layer | Technology |
+|-------|-----------|
+| Language | Python 3.13 |
+| Data | pandas 3.0, numpy |
+| Fuzzy matching | rapidfuzz |
+| Testing | pytest |
+| Visualization | Chart.js (HTML dashboard) |
+| BI documentation | Power BI (model design only) |
+| SQL | ANSI SQL (analytical scripts) |
 
 ## How to Use This in a Portfolio
 
@@ -65,18 +82,3 @@ This project is a **portfolio demonstration** designed to showcase analytical an
    - Anomaly detection rules
    - Data quality approach
    - Testing strategy
-
-## Synthetic Data
-
-All data is generated deterministically with a fixed random seed. The generator creates:
-
-- 5,000–20,000 transaction lines
-- Multiple months, branches, employees, products
-- 30+ reconciliation scenarios
-- Realistic but fictional identifiers and amounts
-
-The data is designed to exercise all matching, reconciliation, and anomaly detection logic.
-
-## Future Enhancements
-
-See `README.md` for planned improvements. Contributions welcome — see `CONTRIBUTING.md`.

@@ -1,0 +1,2 @@
+total_lines,matched_lines,exception_lines,match_rate_pct,exception_rate_pct,total_absolute_exposure,unresolved_exposure,average_confidence,review_required_count,review_rate_pct
+2385,1163,1142,48.76,47.88,825645.25,329455.11,84.78,1146,48.05
