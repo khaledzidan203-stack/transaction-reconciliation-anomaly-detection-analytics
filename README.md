@@ -4,6 +4,18 @@
 
 ---
 
+## Featured Portfolio
+
+**Khaled Zidan — Healthcare & Business Data Analytics**
+
+[Saudi Healthcare Analytics](https://github.com/khaledzidan203-stack/saudi-healthcare-analytics) ·
+[Hospital360](https://github.com/khaledzidan203-stack/Hospital360) ·
+[Online Retail Growth & Customer Intelligence](https://github.com/khaledzidan203-stack/online-retail-growth-customer-intelligence) ·
+[Pharmacy Category Management](https://github.com/khaledzidan203-stack/pharmacy-category-management) ·
+[Regional Sales Performance](https://github.com/khaledzidan203-stack/regional-sales-analytics-portfolio)
+
+**Core stack:** Power BI · SQL · Python · DAX · Analytics Engineering · Healthcare / Pharmacy / Retail Analytics
+
 ## Executive Summary
 
 This project implements a complete analytical pipeline for reconciling transaction data across two source systems (a POS system and a Reference system). It demonstrates production-style data engineering, an 8-level explainable matching engine, rule-based anomaly detection, financial exposure decomposition, and KPI reporting — all built with fully synthetic data for portfolio demonstration purposes.
