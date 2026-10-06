@@ -1,5 +1,8 @@
 # DAX Measures — Transaction Reconciliation & Anomaly Detection Analytics
 
+> **Implementation status — design blueprint only.** This document describes a proposed Power BI layer. The repository does not currently contain a committed PBIP/PBIR/TMDL or PBIX runtime implementation. Numeric examples in this document are illustrative unless they explicitly reconcile to `outputs/examples/`.
+
+
 > Complete DAX measure library for the Power BI star-schema model. All measures reference the fact table `reconciliation_results` and its surrounding dimensions.
 
 ---
