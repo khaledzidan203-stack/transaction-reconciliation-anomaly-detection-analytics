@@ -1,6 +1,7 @@
 """Tests for the synthetic data generator: determinism and structure."""
 
 from pathlib import Path
+import json
 
 import pandas as pd
 import pytest
@@ -77,3 +78,15 @@ class TestTransactionDataStructure:
         df = pd.read_csv(self.data_dir / "source_a_transaction_lines.csv")
         for lid in df["line_id"]:
             assert lid.startswith("TXN-"), f"Unexpected line_id format: {lid}"
+
+
+class TestCommittedSampleReproducibility:
+    """Generated files must reconcile to the committed synthetic-data manifest."""
+
+    def test_generated_files_match_committed_manifest(self, tmp_path: Path):
+        generated = generate_all(tmp_path)
+        committed_path = SAMPLE_DIR / "generation_manifest.json"
+        committed = json.loads(committed_path.read_text(encoding="utf-8"))
+
+        assert generated["seed"] == committed["seed"] == RANDOM_SEED
+        assert generated["files"] == committed["files"]
