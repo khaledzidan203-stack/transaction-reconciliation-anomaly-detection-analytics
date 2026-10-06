@@ -42,7 +42,7 @@ class TestPipelineIntegration:
     def test_data_quality_issues_written(self):
         df = pd.read_csv(self.output_dir / "data_quality_issues.csv")
         # Should have at least some DQ issues from injected scenarios
-        assert len(df) >= 0
+        assert not df.empty
 
     def test_anomaly_results_written(self):
         df = pd.read_csv(self.output_dir / "anomaly_results.csv")
