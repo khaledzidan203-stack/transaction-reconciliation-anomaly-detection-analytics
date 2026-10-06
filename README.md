@@ -8,6 +8,8 @@ This repository implements a deterministic transaction-reconciliation engine for
 
 <img src="docs/assets/Transaction%20Reconciliation%20Analytics%20Dashboard.png" alt="Transaction Reconciliation and Anomaly Detection Analytics overview" width="100%">
 
+> **Visual evidence note:** the infographic is a presentation schematic. Exact match-method names, thresholds and KPI percentages are governed by the source code and retained runtime outputs documented below.
+
 **Start here:** [Case study](docs/CASE_STUDY.md) · [Technical walkthrough](docs/TECHNICAL_WALKTHROUGH.md) · [Evidence map](docs/PROJECT_EVIDENCE_MAP.md) · [Project index](docs/PROJECT_INDEX.md) · [Final validation](docs/FINAL_RELEASE_VALIDATION.md)
 
 ## Project at a glance
