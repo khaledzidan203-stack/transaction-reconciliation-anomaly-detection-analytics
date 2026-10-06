@@ -1,32 +1,35 @@
 # Presentation Assets
 
-This directory contains presentation-only visual assets for the Transaction Reconciliation & Anomaly Detection Analytics project.
+This directory contains presentation-only visual assets for the Transaction Reconciliation & Exception Intelligence project.
 
-## Intended use
+## Current overview
 
-The primary overview image stored here is used by the repository README to explain the end-to-end analytical workflow at a glance.
+`Transaction Reconciliation Analytics Dashboard.png`
 
-Recommended filename:
+The root README uses this image as a visual summary of the end-to-end architecture.
 
-`transaction_reconciliation_anomaly_detection_overview.png`
+The graphic should be read as a presentation schematic. Exact method names, thresholds, statuses and runtime values are governed by the repository source and evidence files.
 
-The overview should represent only repository-supported claims, including:
+## Evidence-supported facts
 
-- fully synthetic, deterministic data generated with seed `20260902`;
-- two transaction source systems plus governed master/reference data;
-- normalization, schema validation and data-quality controls;
-- an 8-level explainable hierarchical matching engine;
-- four reconciliation components: identity, quantity, price and amount;
+The repository supports the following high-level claims:
+
+- deterministic synthetic generation with seed `20260902`;
+- Source A + Source B reconciliation;
+- normalization, schema validation and data-quality checks;
+- 8-level explainable matching;
+- identity, quantity, price and amount reconciliation components;
 - 17 reconciliation statuses;
 - financial exposure decomposition;
-- 7 rule-based anomaly detectors;
-- a prioritized manual-review queue;
-- KPI, SQL and HTML dashboard outputs;
-- 28 controlled scenario types with retained ground truth;
-- current example output of 2,424 reconciliation lines.
+- 7 anomaly rule families;
+- prioritized review queue;
+- 28 controlled scenario types;
+- current retained example output of 2,424 reconciliation lines;
+- implemented HTML/Chart.js dashboard;
+- SQL analytical scripts.
 
 ## Evidence boundary
 
-Assets in this directory are presentation summaries only. They are not source data, reconciliation evidence, runtime test output, SQL evidence, or Power BI runtime evidence.
+Presentation assets are not source data, runtime reconciliation evidence, SQL execution evidence or Power BI runtime evidence.
 
-Authoritative claims remain defined by the Python source, tests, synthetic generation manifest, example outputs, SQL scripts, HTML dashboard, and project documentation.
+Authoritative claims remain defined by the Python source, tests, generation manifest, retained outputs, SQL scripts, HTML dashboard and project documentation.
