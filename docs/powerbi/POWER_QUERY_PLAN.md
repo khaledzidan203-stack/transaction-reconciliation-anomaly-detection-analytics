@@ -1,5 +1,8 @@
 # Power Query M Transformation Plan
 
+> **Implementation status — design blueprint only.** This document describes a proposed Power BI layer. The repository does not currently contain a committed PBIP/PBIR/TMDL or PBIX runtime implementation. Numeric examples in this document are illustrative unless they explicitly reconcile to `outputs/examples/`.
+
+
 > Step-by-step Power Query (M) transformation logic for the Transaction Reconciliation & Anomaly Detection Analytics Power BI model.
 
 ---
