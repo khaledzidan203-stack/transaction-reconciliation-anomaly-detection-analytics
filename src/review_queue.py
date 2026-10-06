@@ -54,13 +54,20 @@ def build_review_queue(
             "confidence_score", "absolute_exposure", "anomaly_flags",
         ])
 
-    # Map anomaly severities to each line
+    # Map anomaly types and critical severities to each reconciliation line.
+    # Keep the type list for reporting and track severity separately so that
+    # priority escalation is based on the anomaly severity rather than the
+    # anomaly-type label.
     anomaly_map: dict[str, list[str]] = {}
+    critical_anomaly_lines: set[str] = set()
     if anomaly_results is not None and not anomaly_results.empty:
         for _, arow in anomaly_results.iterrows():
             key = arow.get("line_key", "")
             atype = arow.get("anomaly_type", "")
+            severity = arow.get("severity", "")
             anomaly_map.setdefault(key, []).append(atype)
+            if severity == SEVERITY_CRITICAL:
+                critical_anomaly_lines.add(key)
 
     rows: list[dict[str, Any]] = []
     for _, rrow in review_items.iterrows():
@@ -69,10 +76,9 @@ def build_review_queue(
         exposure = float(rrow.get("absolute_exposure", 0))
         priority = _priority_from_status(status, exposure)
 
-        # Upgrade priority if a CRITICAL anomaly is attached
-        if anomaly_map.get(line_key):
-            if SEVERITY_CRITICAL in [a for a in anomaly_map[line_key]]:
-                priority = PRIORITY_CRITICAL
+        # Upgrade priority if a CRITICAL anomaly is attached.
+        if line_key in critical_anomaly_lines:
+            priority = PRIORITY_CRITICAL
 
         rows.append({
             "line_key": line_key,
