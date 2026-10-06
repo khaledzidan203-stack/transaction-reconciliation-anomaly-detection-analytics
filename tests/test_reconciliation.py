@@ -4,10 +4,11 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
-from src.config import STATUS_MATCHED, STATUS_UNRESOLVED
+from src.config import PRIORITY_CRITICAL, STATUS_MATCHED, STATUS_UNRESOLVED
 from src.ingestion import load_csvs
 from src.synthetic_data_generator import generate_all
 from src.pipeline import run_pipeline
+from src.review_queue import build_review_queue
 
 
 class TestReconciliationStatuses:
@@ -112,3 +113,35 @@ class TestReviewQueue:
             priorities = self.review["priority"].map(order).tolist()
             # Should be non-decreasing
             assert all(priorities[i] <= priorities[i + 1] for i in range(len(priorities) - 1))
+
+
+class TestReviewQueueSeverityEscalation:
+    """Critical anomaly severity must override ordinary status/exposure priority."""
+
+    def test_critical_anomaly_upgrades_priority(self):
+        recon = pd.DataFrame([
+            {
+                "source_a_line_id": "A-CRITICAL-1",
+                "source_b_line_id": "B-CRITICAL-1",
+                "reconciliation_status": STATUS_UNRESOLVED,
+                "match_method": "UNMATCHED",
+                "confidence_score": 0.0,
+                "absolute_exposure": 10.0,
+                "review_required": "Y",
+            }
+        ])
+        anomalies = pd.DataFrame([
+            {
+                "line_key": "A-CRITICAL-1",
+                "anomaly_type": "DATA_QUALITY_FAILURE",
+                "severity": "CRITICAL",
+                "description": "Synthetic critical anomaly for regression coverage",
+                "reconciliation_status": STATUS_UNRESOLVED,
+            }
+        ])
+
+        review = build_review_queue(recon, anomalies)
+
+        assert len(review) == 1
+        assert review.iloc[0]["priority"] == PRIORITY_CRITICAL
+        assert review.iloc[0]["anomaly_flags"] == "DATA_QUALITY_FAILURE"
