@@ -1,5 +1,8 @@
 # Dashboard Design — Transaction Reconciliation & Anomaly Detection Analytics
 
+> **Implementation status — design blueprint only.** This document describes a proposed Power BI layer. The repository does not currently contain a committed PBIP/PBIR/TMDL or PBIX runtime implementation. Numeric examples in this document are illustrative unless they explicitly reconcile to `outputs/examples/`.
+
+
 > Page layout, visual selection, interaction behaviour, and styling conventions for the Power BI report.
 
 ---
