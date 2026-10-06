@@ -1,5 +1,8 @@
 # Power BI Validation Plan
 
+> **Implementation status — design blueprint only.** This document describes a proposed Power BI layer. The repository does not currently contain a committed PBIP/PBIR/TMDL or PBIX runtime implementation. Numeric examples in this document are illustrative unless they explicitly reconcile to `outputs/examples/`.
+
+
 > Systematic validation procedures to ensure the Power BI report for Transaction Reconciliation & Anomaly Detection Analytics accurately reflects the pipeline output and behaves correctly under all user interactions.
 
 ---
